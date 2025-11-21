@@ -1,0 +1,60 @@
+export default defineAppConfig({
+  navbar: [
+    {
+      label: "¿Nuestra historia?",
+      href: "/about",
+      type: "link",
+    },
+    {
+      label: "Soy Paciente",
+      type: "dropdown",
+      items: [
+        { label: "Periodoncia", href: "/" },
+        { label: "Odontología restauradora", href: "/" },
+        { label: "Endodoncia", href: "/" },
+        { label: "Ortodoncia", href: "/" },
+        { label: "Estética", href: "/" },
+        { label: "Rehabilitación oral", href: "/" },
+        { label: "Implantología", href: "/" },
+        { label: "Cirugía", href: "/" },
+        { label: "Prótesis", href: "/" },
+        { label: "Odontopediatría", href: "/" },
+      ],
+    },
+    {
+      label: "Academia",
+      type: "dropdown",
+      items: [
+        { label: "Fotografía odontológica", href: "/" },
+        { label: "Prótesis completa", href: "/" },
+        { label: "Resinas con guía transparente", href: "/" },
+        { label: "Operatoria", href: "/" },
+        { label: "Rehabilitación oral", href: "/" },
+        { label: "Resinas estratificadas", href: "/" },
+        { label: "Endodoncia", href: "/" },
+        { label: "Periodoncia e implantes", href: "/" },
+        { label: "Ortodoncia", href: "/" },
+        { label: "Odontología digital", href: "/" },
+      ],
+    },
+    {
+      label: "Contacto",
+      href: "/contact",
+      type: "link",
+    },
+    {
+      label: "Cart",
+      href: "/cart",
+      type: "cart",
+      badge: 0,
+    },
+  ],
+  gallery: [
+    "~/assets/images/grid_01.jpeg",
+    "~/assets/images/grid_01.jpeg",
+    "~/assets/images/grid_01.jpeg",
+    "~/assets/images/grid_01.jpeg",
+    "~/assets/images/grid_01.jpeg",
+    "~/assets/images/grid_01.jpeg",
+  ],
+});
