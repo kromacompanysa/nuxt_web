@@ -73,7 +73,7 @@
                         class="flex relative items-center transition-colors hover:text-red-600"
                     >
                         <img
-                            src="/assets/icons/cart4.svg"
+                            src="/icons/cart4.svg"
                             class="w-5 h-5"
                             alt="Cart"
                         />
@@ -171,7 +171,7 @@
                         :href="item.href"
                         class="flex gap-2 items-center py-2 px-4 rounded-md transition hover:text-blue-600 hover:bg-gray-100"
                     >
-                        <img src="/assets/icons/cart4.svg" class="w-5 h-5" />
+                        <img src="/icons/cart4.svg" class="w-5 h-5" />
                         <span>Tienda</span>
 
                         <span

@@ -37,7 +37,7 @@
             <!-- Policies -->
             <p class="mb-2 space-x-2">
                 <NuxtLink
-                    to="/policies/terms-of-service"
+                    to="/policies/terms"
                     class="transition hover:text-white"
                 >
                     Términos de Servicio
@@ -46,7 +46,7 @@
                 <span>|</span>
 
                 <NuxtLink
-                    to="/policies/refund-policy"
+                    to="/policies/refund"
                     class="transition hover:text-white"
                 >
                     Política de Reembolso
