@@ -3,7 +3,11 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
   app: {
-    baseURL: "/nuxt_web/",
+    baseURL: "/",
+    cdnURL: "/",
+  },
+  nitro: {
+    preset: "static",
   },
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
