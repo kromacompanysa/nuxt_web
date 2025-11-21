@@ -13,6 +13,9 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ["./app/assets/css/main.css"],
   vite: {
+    build: {
+      assetsInlineLimit: 0,
+    },
     plugins: [tailwindcss()],
   },
 });
