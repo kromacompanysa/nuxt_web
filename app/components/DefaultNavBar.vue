@@ -51,7 +51,7 @@
                         </button>
 
                         <div
-                            class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md border border-gray-100 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition duration-200"
+                            class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md border border-gray-100 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition duration-200 before:absolute before:-top-3 before:left-0 before:w-full before:h-6 before:bg-transparent before:content-['']"
                         >
                             <ul class="py-2">
                                 <li v-for="sub in item.items" :key="sub.label">

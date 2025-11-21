@@ -1,16 +1,19 @@
 <template>
     <section class="pt-10 pb-10 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="mb-12 text-center">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
-                    Casos de éxito.
-                </h2>
-                <p class="mx-auto mt-4 max-w-2xl text-gray-600">
-                    Resultados reales de pacientes que confiaron en Kroma Dental
-                    Studio.
-                </p>
-            </div>
+        <!-- Title block (centered) -->
+        <div class="text-center space-y-4 mb-12 px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
+                Casos de <span class="text-red-600">éxito</span>
+            </h2>
 
+            <p class="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto">
+                Resultados reales de pacientes que confiaron en Kroma Dental
+                Studio.
+            </p>
+        </div>
+
+        <!-- Full-width Swiper -->
+        <div class="w-full">
             <Swiper
                 :modules="[Grid, Pagination]"
                 :grid="{ rows: 2, fill: 'row' }"

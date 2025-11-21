@@ -10,12 +10,6 @@
             <slot />
         </main>
 
-        <!-- Grid -->
-        <DefaultGrid />
-
-        <!-- Pre-Footer -->
-        <DefaultPreFooter />
-
         <!-- Footer -->
         <DefaultFooter />
     </div>
@@ -24,8 +18,6 @@
 <script setup>
 import DefaultNavBar from "@/components/DefaultNavBar.vue";
 import DefaultFooter from "@/components/DefaultFooter.vue";
-import DefaultPreFooter from "@/components/DefaultPreFooter.vue";
-import DefaultGrid from "@/components/DefaultGrid.vue";
 </script>
 
 <style scoped>
