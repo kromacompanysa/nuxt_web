@@ -23,7 +23,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Detect manager
       - name: Detect package manager
         id: pm
         run: |
@@ -38,14 +37,14 @@ jobs:
             echo "command=ci" >> $GITHUB_OUTPUT
           fi
 
-      # Setup Node WITHOUT pnpm cache
+      # ---------------------------------------------------------
+      # NO CACHE for pnpm → do NOT include "cache:" field at all
+      # ---------------------------------------------------------
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 24
-          cache: ${{ steps.pm.outputs.manager == 'pnpm' && 'none' || steps.pm.outputs.manager }}
 
-      # Install pnpm if needed
       - name: Install pnpm
         if: ${{ steps.pm.outputs.manager == 'pnpm' }}
         uses: pnpm/action-setup@v4
@@ -53,24 +52,21 @@ jobs:
           version: 9
           run_install: false
 
-      # Install dependencies
       - name: Install dependencies
         run: ${{ steps.pm.outputs.manager }} ${{ steps.pm.outputs.command }}
 
-      # Setup Pages
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
           static_site_generator: nuxt
 
-      # Build static site
       - name: Build static site
         run: ${{ steps.pm.outputs.manager }} run generate
 
-      # Upload dist
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          # Nuxt 4 outputs static build here:
           path: .output/public
 
   deploy:
