@@ -11,7 +11,7 @@
                         class="transition hover:opacity-80"
                     >
                         <img
-                            src="/assets/icons/facebook.svg"
+                            src="/icons/facebook.svg"
                             alt="Facebook"
                             class="w-6 h-6 invert brightness-0"
                         />
@@ -26,7 +26,7 @@
                         class="transition hover:opacity-80"
                     >
                         <img
-                            src="/assets/icons/instagram.svg"
+                            src="/icons/instagram.svg"
                             alt="Instagram"
                             class="w-6 h-6 invert brightness-0"
                         />
