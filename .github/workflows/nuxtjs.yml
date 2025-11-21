@@ -23,16 +23,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # ---------------------------------------------------------
-      # 1. Detect lockfile (pnpm support included)
-      # ---------------------------------------------------------
+      # Detect manager
       - name: Detect package manager
-        id: detect-package-manager
+        id: pm
         run: |
-          if [ -f "pnpm-lock.yaml" ]; then
+          if [ -f pnpm-lock.yaml ]; then
             echo "manager=pnpm" >> $GITHUB_OUTPUT
             echo "command=install" >> $GITHUB_OUTPUT
-          elif [ -f "yarn.lock" ]; then
+          elif [ -f yarn.lock ]; then
             echo "manager=yarn" >> $GITHUB_OUTPUT
             echo "command=install" >> $GITHUB_OUTPUT
           else
@@ -40,49 +38,36 @@ jobs:
             echo "command=ci" >> $GITHUB_OUTPUT
           fi
 
-      # ---------------------------------------------------------
-      # 2. Setup Node (24.x)
-      # ---------------------------------------------------------
+      # Setup Node WITHOUT pnpm cache
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 24
-          cache: ${{ steps.detect-package-manager.outputs.manager }}
+          cache: ${{ steps.pm.outputs.manager == 'pnpm' && 'none' || steps.pm.outputs.manager }}
 
-      # ---------------------------------------------------------
-      # 3. Install pnpm *before using it*
-      # ---------------------------------------------------------
+      # Install pnpm if needed
       - name: Install pnpm
-        if: ${{ steps.detect-package-manager.outputs.manager == 'pnpm' }}
+        if: ${{ steps.pm.outputs.manager == 'pnpm' }}
         uses: pnpm/action-setup@v4
         with:
           version: 9
-          run_install: false # we run installation manually later
+          run_install: false
 
-      # ---------------------------------------------------------
-      # 4. Setup GitHub Pages
-      # ---------------------------------------------------------
+      # Install dependencies
+      - name: Install dependencies
+        run: ${{ steps.pm.outputs.manager }} ${{ steps.pm.outputs.command }}
+
+      # Setup Pages
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
           static_site_generator: nuxt
 
-      # ---------------------------------------------------------
-      # 5. Install Dependencies
-      # ---------------------------------------------------------
-      - name: Install dependencies
-        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-
-      # ---------------------------------------------------------
-      # 6. Build Nuxt (STATIC EXPORT)
-      # ---------------------------------------------------------
+      # Build static site
       - name: Build static site
-        run: ${{ steps.detect-package-manager.outputs.manager }} run generate
+        run: ${{ steps.pm.outputs.manager }} run generate
 
-      # ---------------------------------------------------------
-      # 7. Upload Nuxt static output
-      # Nuxt 4 outputs to .output/public — NOT dist/
-      # ---------------------------------------------------------
+      # Upload dist
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
