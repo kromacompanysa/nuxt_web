@@ -22,7 +22,7 @@ export default defineAppConfig({
       ],
     },
     {
-      label: "Academia",
+      label: "Cursos",
       type: "dropdown",
       items: [
         { label: "Fotografía odontológica", href: "/" },
@@ -35,6 +35,19 @@ export default defineAppConfig({
         { label: "Periodoncia e implantes", href: "/" },
         { label: "Ortodoncia", href: "/" },
         { label: "Odontología digital", href: "/" },
+      ],
+    },
+    {
+      label: "Laboratorio Digital",
+      type: "dropdown",
+      items: [
+        { label: "Pronto", href: "/" },
+        { label: "Pronto", href: "/" },
+        { label: "Pronto", href: "/" },
+        { label: "Pronto", href: "/" },
+        { label: "Pronto", href: "/" },
+        { label: "Pronto", href: "/" },
+        { label: "Pronto", href: "/" },
       ],
     },
     {
