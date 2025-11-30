@@ -73,27 +73,27 @@ const courses = [
     {
         title: "Curso Tema 1",
         img: "//dentlit.com/cdn/shop/files/dentlit-online-course-thumbnail_2x_103da2ba-7fdc-4b58-ba35-39ceec0b05b1_160x160@2x.png?v=1675373315",
-        url: "curso/1",
+        url: "cursos/1",
     },
     {
         title: "Curso Tema 2",
         img: "//dentlit.com/cdn/shop/files/dentlit-life-in-person-thumbnail_2x_b695378b-3051-4189-84a3-97c0947a3908_160x160@2x.png?v=1675373337",
-        url: "/curso/2",
+        url: "/cursos/2",
     },
     {
         title: "Curso Tema 3",
         img: "//dentlit.com/cdn/shop/files/books-and-products-thumbnail_2x_8c716495-022a-4fd4-8681-2b4298ac41a9_160x160@2x.png?v=1675373353",
-        url: "/curso/3",
+        url: "/cursos/3",
     },
     {
         title: "Curso Tema 4",
         img: "//dentlit.com/cdn/shop/files/dentlit-life-in-person-thumbnail_2x_b695378b-3051-4189-84a3-97c0947a3908_160x160@2x.png?v=1675373337",
-        url: "/curso/4",
+        url: "/cursos/4",
     },
     {
         title: "Curso Tema 5",
         img: "//dentlit.com/cdn/shop/files/dentlit-life-in-person-thumbnail_2x_b695378b-3051-4189-84a3-97c0947a3908_160x160@2x.png?v=1675373337",
-        url: "/curso/5",
+        url: "/cursos/5",
     },
 ];
 </script>

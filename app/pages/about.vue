@@ -96,7 +96,3 @@
     <!-- Base Grid Component -->
     <DefaultSwiperGallery />
 </template>
-
-<script setup>
-import DefaultSwiperGallery from "@/components/DefaultSwiperGallery.vue";
-</script>

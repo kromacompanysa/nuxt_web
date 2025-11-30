@@ -1,7 +1,7 @@
 <template>
     <section class="pt-24 pb-24 px-6 max-w-4xl mx-auto text-center">
         <h1 class="text-4xl md:text-5xl font-bold text-gray-900">
-            {{ title }}
+            {{ courseTitle }}
         </h1>
 
         <p class="mt-4 text-gray-600 text-lg">
@@ -15,5 +15,15 @@
 </template>
 
 <script setup>
-const title = "Nombre del curso";
+definePageMeta({
+    layout: "portal",
+});
+
+const route = useRoute();
+const slug = route.params.slug;
+
+// Convert slug into title
+const courseTitle = slug
+    .replace(/-/g, " ")
+    .replace(/\b\w/g, (char) => char.toUpperCase());
 </script>

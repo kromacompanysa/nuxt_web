@@ -15,11 +15,6 @@
     </div>
 </template>
 
-<script setup>
-import DefaultNavBar from "@/components/DefaultNavBar.vue";
-import DefaultFooter from "@/components/DefaultFooter.vue";
-</script>
-
 <style scoped>
 /* Optional: smooth page transitions */
 main {

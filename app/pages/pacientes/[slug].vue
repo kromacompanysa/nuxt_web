@@ -1,11 +1,11 @@
 <template>
     <section class="pt-24 pb-24 px-6 max-w-4xl mx-auto text-center">
         <h1 class="text-4xl md:text-5xl font-bold text-gray-900">
-            {{ title }}
+            {{ pageTitle }}
         </h1>
 
         <p class="mt-4 text-gray-600 text-lg">
-            Próximamente encontrarás toda la información sobre este curso.
+            Información para pacientes próximamente disponible.
         </p>
 
         <div class="mt-10 py-10 border rounded-xl bg-white shadow-sm">
@@ -15,5 +15,15 @@
 </template>
 
 <script setup>
-const title = "Nombre del curso";
+definePageMeta({
+    layout: "portal",
+});
+
+const route = useRoute();
+const slug = route.params.slug;
+
+// Convert slug to proper title
+const pageTitle = slug
+    .replace(/-/g, " ")
+    .replace(/\b\w/g, (c) => c.toUpperCase());
 </script>

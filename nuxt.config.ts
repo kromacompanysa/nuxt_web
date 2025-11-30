@@ -2,6 +2,12 @@
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
+  components: [
+    {
+      path: "~/components",
+      pathPrefix: true,
+    },
+  ],
   app: {
     baseURL: "/",
     cdnURL: "/",
