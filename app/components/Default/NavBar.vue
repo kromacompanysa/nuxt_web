@@ -33,23 +33,35 @@
                         v-else-if="item.type === 'dropdown'"
                         class="relative group"
                     >
-                        <button
-                            class="flex items-center space-x-1 transition hover:text-red-600"
-                        >
-                            <span>{{ item.label }}</span>
-                            <svg
-                                class="w-4 h-4 transition transform group-hover:rotate-180"
-                                fill="currentColor"
-                                viewBox="0 0 20 20"
+                        <div class="flex items-center space-x-1">
+                            <!-- Texto que navega -->
+                            <a
+                                :href="item.href"
+                                class="transition hover:text-red-600"
                             >
-                                <path
-                                    fill-rule="evenodd"
-                                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.2l3.71-3.97a.75.75 0 111.08 1.04l-4.25 4.55a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z"
-                                    clip-rule="evenodd"
-                                />
-                            </svg>
-                        </button>
+                                {{ item.label }}
+                            </a>
 
+                            <!-- Botón flecha solo para abrir el menú -->
+                            <button
+                                class="transition hover:text-red-600 cursor-pointer"
+                                @click.stop
+                            >
+                                <svg
+                                    class="w-4 h-4 transition transform group-hover:rotate-180"
+                                    fill="currentColor"
+                                    viewBox="0 0 20 20"
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M5.23 7.21a.75.75 0 011.06.02L10 11.2l3.71-3.97a.75.75 0 111.08 1.04l-4.25 4.55a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z"
+                                        clip-rule="evenodd"
+                                    />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- DROPDOWN MENU -->
                         <div
                             class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md border border-gray-100 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition duration-200 before:absolute before:-top-3 before:left-0 before:w-full before:h-6 before:bg-transparent before:content-['']"
                         >
