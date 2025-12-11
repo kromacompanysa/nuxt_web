@@ -1,7 +1,6 @@
 <template>
     <section class="pt-20 pb-10 bg-white">
         <div class="px-4 mx-auto max-w-6xl">
-            <!-- Title -->
             <div class="text-center space-y-4 mb-12">
                 <h2
                     class="text-3xl md:text-4xl font-bold text-gray-900 leading-tight"
@@ -16,10 +15,8 @@
                 </p>
             </div>
 
-            <!-- Swiper Component -->
             <Swiper
                 :modules="[Pagination, Autoplay]"
-                :slides-per-view="1.1"
                 :space-between="20"
                 :pagination="{ clickable: true }"
                 :loop="true"
@@ -28,35 +25,35 @@
                     disableOnInteraction: false,
                 }"
                 :breakpoints="{
-                    640: { slidesPerView: 2.2 },
-                    1024: { slidesPerView: 3.2 },
+                    0: { slidesPerView: 1.1 }, // 📱 móviles
+                    640: { slidesPerView: 1.8 }, // 📲 tablets pequeñas
+                    1024: { slidesPerView: 3.2 }, // 💻 desktop
                 }"
                 class="mySwiperHero hero-swiper"
             >
-                <SwiperSlide v-for="course in courses" :key="course.title">
+                <SwiperSlide v-for="course in courses" :key="course.label">
                     <NuxtLink
-                        :to="course.url"
+                        :to="course.href"
                         class="block overflow-hidden relative w-full h-72 rounded-3xl shadow-md transition-all duration-500 hover:shadow-xl hover:-translate-y-1 group"
                     >
                         <img
-                            :src="course.img"
-                            :alt="course.title"
+                            :src="course.image"
+                            :alt="course.label"
                             class="object-cover w-full h-full transition-transform duration-700 transform scale-105 group-hover:scale-110"
                         />
 
                         <div
-                            class="absolute inset-0 .bg-linear-to-t to-transparent opacity-90 transition-opacity group-hover:opacity-95 from-black/70 via-black/30"
+                            class="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent opacity-90 group-hover:opacity-95"
                         ></div>
 
                         <span
                             class="absolute bottom-6 left-1/2 py-4 px-10 text-base font-semibold text-center text-white bg-red-600 rounded-full shadow-md transition duration-300 transform -translate-x-1/2 hover:bg-red-700 hover:shadow-lg hover:scale-105"
                         >
-                            {{ course.title }}
+                            {{ course.label }}
                         </span>
                     </NuxtLink>
                 </SwiperSlide>
 
-                <!-- Pagination -->
                 <div class="swiper-pagination mt-10"></div>
             </Swiper>
         </div>
@@ -69,33 +66,13 @@ import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-const courses = [
-    {
-        title: "Curso Tema 1",
-        img: "//dentlit.com/cdn/shop/files/dentlit-online-course-thumbnail_2x_103da2ba-7fdc-4b58-ba35-39ceec0b05b1_160x160@2x.png?v=1675373315",
-        url: "cursos/1",
-    },
-    {
-        title: "Curso Tema 2",
-        img: "//dentlit.com/cdn/shop/files/dentlit-life-in-person-thumbnail_2x_b695378b-3051-4189-84a3-97c0947a3908_160x160@2x.png?v=1675373337",
-        url: "/cursos/2",
-    },
-    {
-        title: "Curso Tema 3",
-        img: "//dentlit.com/cdn/shop/files/books-and-products-thumbnail_2x_8c716495-022a-4fd4-8681-2b4298ac41a9_160x160@2x.png?v=1675373353",
-        url: "/cursos/3",
-    },
-    {
-        title: "Curso Tema 4",
-        img: "//dentlit.com/cdn/shop/files/dentlit-life-in-person-thumbnail_2x_b695378b-3051-4189-84a3-97c0947a3908_160x160@2x.png?v=1675373337",
-        url: "/cursos/4",
-    },
-    {
-        title: "Curso Tema 5",
-        img: "//dentlit.com/cdn/shop/files/dentlit-life-in-person-thumbnail_2x_b695378b-3051-4189-84a3-97c0947a3908_160x160@2x.png?v=1675373337",
-        url: "/cursos/5",
-    },
-];
+const navItems = useAppConfig().navbar;
+
+// obtener la sección Cursos
+const cursosSection = navItems.find((item) => item.label === "Cursos");
+
+// Los items ya contienen label, href y image
+const courses = cursosSection?.items ?? [];
 </script>
 
 <style scoped>

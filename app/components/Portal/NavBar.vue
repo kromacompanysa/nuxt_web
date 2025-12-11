@@ -1,85 +1,77 @@
 <template>
-    <header
-        class="fixed top-0 w-full z-40 bg-white/80 backdrop-blur-md border-b border-gray-200 shadow-sm"
-    >
+    <header class="fixed top-0 w-full z-50 bg-white shadow-sm backdrop-blur-md">
         <div
-            class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between"
+            class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3"
         >
-            <!-- Smaller Logo -->
-            <a href="/" class="flex items-center space-x-2 group">
+            <!-- LOGO -->
+            <a href="/" class="flex items-center">
                 <img
                     src="/images/kroma_png_black.png"
                     alt="Kroma Logo"
-                    class="w-24 h-auto transition-transform group-hover:scale-105"
+                    class="h-7 sm:h-8 w-auto"
                 />
             </a>
 
-            <!-- Desktop Navigation -->
-            <nav
-                class="hidden md:flex items-center space-x-6 font-medium text-gray-700"
-            >
+            <!-- DESKTOP BUTTONS -->
+            <div class="hidden sm:flex items-center space-x-6">
                 <a
-                    v-for="item in simpleNav"
-                    :key="item.label"
-                    :href="item.href"
-                    class="hover:text-red-600 transition"
+                    href="/#"
+                    class="text-gray-600 hover:text-black text-sm font-medium tracking-wide"
                 >
-                    {{ item.label }}
+                    INSCRIBIRTE
                 </a>
-            </nav>
 
-            <!-- Mobile Button -->
-            <button
-                class="md:hidden focus:outline-none"
-                @click="open = !open"
-                aria-label="Toggle Menu"
-            >
+                <a
+                    href="/#"
+                    class="px-5 py-2 border border-gray-400 rounded-full font-semibold text-gray-700 hover:bg-gray-100 transition text-sm"
+                >
+                    ACCEDER
+                </a>
+            </div>
+
+            <!-- MOBILE BUTTON (Hamburger) -->
+            <button class="sm:hidden text-gray-700" @click="open = !open">
                 <svg
-                    class="w-7 h-7"
+                    class="w-6 h-6"
                     fill="none"
                     stroke="currentColor"
+                    stroke-width="2"
                     viewBox="0 0 24 24"
                 >
                     <path
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        stroke-width="2"
                         d="M4 6h16M4 12h16M4 18h16"
                     />
                 </svg>
             </button>
         </div>
 
-        <!-- Mobile Navigation -->
+        <!-- MOBILE MENU -->
         <div
-            :class="[
-                'md:hidden bg-white border-t border-gray-200',
-                open ? 'block' : 'hidden',
-            ]"
+            v-if="open"
+            class="sm:hidden border-t border-gray-200 bg-white px-4 py-4 space-y-2"
         >
-            <ul class="flex flex-col px-5 py-3 text-gray-700 space-y-2">
-                <li v-for="item in simpleNav" :key="item.label">
-                    <a
-                        :href="item.href"
-                        class="block px-3 py-2 rounded hover:bg-gray-100 hover:text-red-600 transition"
-                    >
-                        {{ item.label }}
-                    </a>
-                </li>
-            </ul>
+            <!-- SIGN IN BUTTON (mobile) -->
+            <a
+                href="/#"
+                class="block w-full text-center px-6 py-1 border border-gray-400 rounded-full font-semibold text-gray-700 hover:bg-gray-100 transition text-sm"
+            >
+                INSCRIBIRTE
+            </a>
+
+            <!-- GET STARTED NOW BUTTON (mobile) -->
+            <a
+                href="/#"
+                class="block w-full text-center px-6 py-1 border border-gray-400 rounded-full font-semibold text-gray-700 hover:bg-gray-100 transition text-sm"
+            >
+                ACCEDER
+            </a>
         </div>
     </header>
 </template>
 
 <script setup>
 import { ref } from "vue";
-
 const open = ref(false);
-
-const simpleNav = [
-    { label: "Home", href: "/" },
-    { label: "Services", href: "/services" },
-    { label: "Store", href: "/store" },
-    { label: "Contact", href: "/contact" },
-];
 </script>
