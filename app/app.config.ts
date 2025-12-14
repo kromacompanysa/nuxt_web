@@ -162,7 +162,7 @@ export default defineAppConfig({
       type: "link",
     },
     {
-      label: "productos",
+      label: "Productos",
       href: "/productos",
       type: "link",
     },
