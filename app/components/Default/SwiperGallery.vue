@@ -49,16 +49,16 @@ import "swiper/css/grid";
 import "swiper/css/pagination";
 
 const galleryNames = [
-    "grid_01.jpeg",
-    "grid_01.jpeg",
-    "grid_01.jpeg",
-    "grid_01.jpeg",
-    "grid_01.jpeg",
-    "grid_01.jpeg",
-    "grid_01.jpeg",
-    "grid_01.jpeg",
-    "grid_01.jpeg",
-    "grid_01.jpeg",
+    "pre_post_01.jpg",
+    "pre_post_01.jpg",
+    "pre_post_01.jpg",
+    "pre_post_01.jpg",
+    "pre_post_01.jpg",
+    "pre_post_01.jpg",
+    "pre_post_01.jpg",
+    "pre_post_01.jpg",
+    "pre_post_01.jpg",
+    "pre_post_01.jpg",
 ];
 
 const gallery = galleryNames.map((name) => `/images/${name}`);
