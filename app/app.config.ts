@@ -162,6 +162,11 @@ export default defineAppConfig({
       type: "link",
     },
     {
+      label: "productos",
+      href: "/productos",
+      type: "link",
+    },
+    {
       label: "Cart",
       href: "/cart",
       type: "cart",
