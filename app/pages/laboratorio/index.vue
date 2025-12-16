@@ -1,7 +1,7 @@
 <template>
     <section class="max-w-7xl mx-auto px-6 py-6">
         <h1 class="text-3xl font-semibold text-center mb-10">
-            Laboratorio Digital
+            {{ laboratorioSection.label }}
         </h1>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -31,7 +31,7 @@ const navItems = useAppConfig().navbar;
 
 // obtener la sección Laboratorio
 const laboratorioSection = navItems.find(
-    (item) => item.label === "Laboratorio Digital",
+    (item) => item.label === "Laboratorio",
 );
 
 // Los items ya incluyen label, href y image

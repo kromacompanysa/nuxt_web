@@ -68,8 +68,8 @@ import "swiper/css/pagination";
 
 const navItems = useAppConfig().navbar;
 
-// obtener la sección Cursos
-const cursosSection = navItems.find((item) => item.label === "Cursos");
+// obtener la sección Academia
+const cursosSection = navItems.find((item) => item.label === "Academia");
 
 // Los items ya contienen label, href y image
 const courses = cursosSection?.items ?? [];

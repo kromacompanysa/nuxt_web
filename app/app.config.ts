@@ -1,126 +1,126 @@
 export default defineAppConfig({
   navbar: [
     {
-      label: "¿Nuestra historia?",
+      label: "Nosotros",
       href: "/about",
       type: "link",
     },
     {
-      label: "Soy Paciente",
+      label: "Consultorio",
       type: "dropdown",
-      href: "/pacientes",
+      href: "/consultorio",
       items: [
         {
           label: "Periodoncia",
-          href: "/pacientes/periodoncia",
+          href: "/consultorio/periodoncia",
           image: "/images/pre_post_01.jpg",
         },
         {
           label: "Odontología restauradora",
-          href: "/pacientes/odontologia-restauradora",
+          href: "/consultorio/odontologia-restauradora",
           image: "/images/pre_post_01.jpg",
         },
         {
           label: "Endodoncia",
-          href: "/pacientes/endodoncia",
+          href: "/consultorio/endodoncia",
           image: "/images/pre_post_01.jpg",
         },
         {
           label: "Ortodoncia",
-          href: "/pacientes/ortodoncia",
+          href: "/consultorio/ortodoncia",
           image: "/images/pre_post_01.jpg",
         },
         {
           label: "Estética",
-          href: "/pacientes/estetica",
+          href: "/consultorio/estetica",
           image: "/images/pre_post_01.jpg",
         },
         {
           label: "Rehabilitación oral",
-          href: "/pacientes/rehabilitacion-oral",
+          href: "/consultorio/rehabilitacion-oral",
           image: "/images/pre_post_01.jpg",
         },
         {
           label: "Implantología",
-          href: "/pacientes/implantologia",
+          href: "/consultorio/implantologia",
           image: "/images/pre_post_01.jpg",
         },
         {
           label: "Cirugía",
-          href: "/pacientes/cirugia",
+          href: "/consultorio/cirugia",
           image: "/images/pre_post_01.jpg",
         },
         {
           label: "Prótesis",
-          href: "/pacientes/protesis",
+          href: "/consultorio/protesis",
           image: "/images/pre_post_01.jpg",
         },
         {
           label: "Odontopediatría",
-          href: "/pacientes/odontopediatria",
+          href: "/consultorio/odontopediatria",
           image: "/images/pre_post_01.jpg",
         },
       ],
     },
     {
-      label: "Cursos",
+      label: "Academia",
       type: "dropdown",
-      href: "/cursos",
+      href: "/academia",
       items: [
         {
           label: "Fotografía odontológica",
-          href: "/cursos/fotografia-odontologica",
+          href: "/academia/fotografia-odontologica",
           image: "/images/pre_post_01.jpg",
         },
         {
           label: "Prótesis completa",
-          href: "/cursos/protesis-completa",
+          href: "/academia/protesis-completa",
           image: "/images/pre_post_01.jpg",
         },
         {
           label: "Resinas con guía transparente",
-          href: "/cursos/resinas-guia-transparente",
+          href: "/academia/resinas-guia-transparente",
           image: "/images/pre_post_01.jpg",
         },
         {
           label: "Operatoria",
-          href: "/cursos/operatoria",
+          href: "/academia/operatoria",
           image: "/images/pre_post_01.jpg",
         },
         {
           label: "Rehabilitación oral",
-          href: "/cursos/rehabilitacion-oral",
+          href: "/academia/rehabilitacion-oral",
           image: "/images/pre_post_01.jpg",
         },
         {
           label: "Resinas estratificadas",
-          href: "/cursos/resinas-estratificadas",
+          href: "/academia/resinas-estratificadas",
           image: "/images/pre_post_01.jpg",
         },
         {
           label: "Endodoncia",
-          href: "/cursos/endodoncia",
+          href: "/academia/endodoncia",
           image: "/images/pre_post_01.jpg",
         },
         {
           label: "Periodoncia e implantes",
-          href: "/cursos/periodoncia-implantes",
+          href: "/academia/periodoncia-implantes",
           image: "/images/pre_post_01.jpg",
         },
         {
           label: "Ortodoncia",
-          href: "/cursos/ortodoncia",
+          href: "/academia/ortodoncia",
           image: "/images/pre_post_01.jpg",
         },
         {
           label: "Odontología digital",
-          href: "/cursos/odontologia-digital",
+          href: "/academia/odontologia-digital",
           image: "/images/pre_post_01.jpg",
         },
       ],
     },
     {
-      label: "Laboratorio Digital",
+      label: "Laboratorio",
       type: "dropdown",
       href: "/laboratorio",
       items: [
