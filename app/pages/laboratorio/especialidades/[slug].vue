@@ -2,14 +2,14 @@
     <main class="w-full">
         <!-- ================================
          HERO SECTION (Thinkific Style)
-    ================================= -->
+        ================================= -->
         <section
             class="relative h-[80vh] md:h-[85vh] flex items-center bg-cover bg-center"
             style="background-image: url(/images/hero_0.jpeg)"
         >
             <div class="max-w-4xl mx-auto px-6 text-black">
                 <h1 class="text-4xl md:text-6xl font-bold leading-tight">
-                    {{ courseTitle }}
+                    {{ especialidadItem.label }}
                 </h1>
 
                 <p class="mt-4 text-lg max-w-xl opacity-90">
@@ -230,12 +230,22 @@
 <script setup>
 definePageMeta({ layout: "portal" });
 
+const navItems = useAppConfig().navbar;
 const route = useRoute();
 const slug = route.params.slug;
 
-const courseTitle = slug
-    .replace(/-/g, " ")
-    .replace(/\b\w/g, (char) => char.toUpperCase());
+const laboratorioSection = navItems.find(
+    (item) => item.label === "consultorio",
+);
+
+// Get especialidades group
+const especialidadesSection = laboratorioSection?.items?.find(
+    (item) => item.label === "especialidades",
+);
+
+const especialidadItem = especialidadesSection?.items?.find((item) =>
+    item.href?.endsWith(`/${slug}`),
+);
 
 const showVideo = ref(false);
 const openVideo = () => (showVideo.value = true);
@@ -249,3 +259,4 @@ h3 {
     font-family: "Inter", sans-serif;
 }
 </style>
+

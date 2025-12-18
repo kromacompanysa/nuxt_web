@@ -2,14 +2,14 @@
     <main class="w-full">
         <!-- ================================
          HERO SECTION (Thinkific Style)
-    ================================= -->
+        ================================= -->
         <section
             class="relative h-[80vh] md:h-[85vh] flex items-center bg-cover bg-center"
             style="background-image: url(/images/hero_0.jpeg)"
         >
             <div class="max-w-4xl mx-auto px-6 text-black">
                 <h1 class="text-4xl md:text-6xl font-bold leading-tight">
-                    {{ courseTitle }}
+                    {{ seguroItem.label }}
                 </h1>
 
                 <p class="mt-4 text-lg max-w-xl opacity-90">
