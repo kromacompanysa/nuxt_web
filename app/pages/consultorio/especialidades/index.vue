@@ -1,19 +1,19 @@
 <template>
     <section class="max-w-7xl mx-auto px-6 py-6">
         <h1 class="text-3xl font-semibold text-center mb-10">
-            {{ consultorioSection.label }}
+            {{ especialidadesSection.label }}
         </h1>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
             <NuxtLink
-                v-for="item in consultorioItems"
+                v-for="item in especialidadesItems"
                 :key="item.href"
                 :to="item.href"
                 class="block group"
             >
                 <div class="overflow-hidden rounded-lg shadow-md">
                     <img
-                        :src="item.image"
+                        :src="item.image ?? '/images/pre_post_01.jpg'"
                         class="w-full h-48 object-cover group-hover:scale-105 transition"
                     />
                 </div>
@@ -30,11 +30,19 @@
 // Load navbar config
 const navItems = useAppConfig().navbar;
 
-// Get "consultorio" section
+// 1️⃣ Get "consultorio"
 const consultorioSection = navItems.find(
     (item) => item.label === "consultorio",
 );
 
-// Only group-level items (especialidades, Seguros)
-const consultorioItems = consultorioSection?.items ?? [];
+// 2️⃣ Get "especialidades" group
+const especialidadesSection = consultorioSection?.items?.find(
+    (item) => item.label === "especialidades",
+) ?? {
+    label: "especialidades",
+    items: [],
+};
+
+// 3️⃣ Cards
+const especialidadesItems = especialidadesSection.items ?? [];
 </script>

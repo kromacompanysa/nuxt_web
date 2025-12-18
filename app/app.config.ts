@@ -1,174 +1,284 @@
 export default defineAppConfig({
   navbar: [
     {
-      label: "Nosotros",
-      href: "/about",
-      type: "link",
+      label: "nosotros",
+      href: "/acerca",
+      type: "dropdown",
+      items: [
+        {
+          label: "historia",
+          type: "link",
+          href: "/acerca/historia",
+        },
+        {
+          label: "contacto",
+          type: "link",
+          href: "/acerca/contacto",
+        },
+      ],
     },
     {
-      label: "Consultorio",
+      label: "consultorio",
       type: "dropdown",
       href: "/consultorio",
       items: [
         {
-          label: "Periodoncia",
-          href: "/consultorio/periodoncia",
+          label: "especialidades",
+          href: "/consultorio/especialidades",
           image: "/images/pre_post_01.jpg",
+          type: "group",
+          items: [
+            {
+              label: "periodoncia",
+              href: "/consultorio/especialidades/periodoncia",
+              image: "/images/pre_post_01.jpg",
+            },
+            {
+              label: "odontología restauradora",
+              href: "/consultorio/especialidades/odontologia-restauradora",
+              image: "/images/pre_post_01.jpg",
+            },
+            {
+              label: "endodoncia",
+              href: "/consultorio/especialidades/endodoncia",
+              image: "/images/pre_post_01.jpg",
+            },
+            {
+              label: "ortodoncia",
+              href: "/consultorio/especialidades/ortodoncia",
+              image: "/images/pre_post_01.jpg",
+            },
+            {
+              label: "estética",
+              href: "/consultorio/especialidades/estetica",
+              image: "/images/pre_post_01.jpg",
+            },
+            {
+              label: "rehabilitación oral",
+              href: "/consultorio/especialidades/rehabilitacion-oral",
+              image: "/images/pre_post_01.jpg",
+            },
+            {
+              label: "implantología",
+              href: "/consultorio/especialidades/implantologia",
+              image: "/images/pre_post_01.jpg",
+            },
+            {
+              label: "cirugía",
+              href: "/consultorio/especialidades/cirugia",
+              image: "/images/pre_post_01.jpg",
+            },
+            {
+              label: "prótesis",
+              href: "/consultorio/especialidades/protesis",
+              image: "/images/pre_post_01.jpg",
+            },
+            {
+              label: "odontopediatría",
+              href: "/consultorio/especialidades/odontopediatria",
+              image: "/images/pre_post_01.jpg",
+            },
+          ],
         },
         {
-          label: "Odontología restauradora",
-          href: "/consultorio/odontologia-restauradora",
+          label: "seguros",
+          href: "/consultorio/seguros",
           image: "/images/pre_post_01.jpg",
-        },
-        {
-          label: "Endodoncia",
-          href: "/consultorio/endodoncia",
-          image: "/images/pre_post_01.jpg",
-        },
-        {
-          label: "Ortodoncia",
-          href: "/consultorio/ortodoncia",
-          image: "/images/pre_post_01.jpg",
-        },
-        {
-          label: "Estética",
-          href: "/consultorio/estetica",
-          image: "/images/pre_post_01.jpg",
-        },
-        {
-          label: "Rehabilitación oral",
-          href: "/consultorio/rehabilitacion-oral",
-          image: "/images/pre_post_01.jpg",
-        },
-        {
-          label: "Implantología",
-          href: "/consultorio/implantologia",
-          image: "/images/pre_post_01.jpg",
-        },
-        {
-          label: "Cirugía",
-          href: "/consultorio/cirugia",
-          image: "/images/pre_post_01.jpg",
-        },
-        {
-          label: "Prótesis",
-          href: "/consultorio/protesis",
-          image: "/images/pre_post_01.jpg",
-        },
-        {
-          label: "Odontopediatría",
-          href: "/consultorio/odontopediatria",
-          image: "/images/pre_post_01.jpg",
+          type: "group",
+          items: [
+            {
+              label: "asegurarte",
+              href: "/consultorio/seguros/asegurarte",
+              image: "/images/pre_post_01.jpg",
+            },
+            {
+              label: "asegurado",
+              href: "/consultorio/seguros/asegurado",
+              image: "/images/pre_post_01.jpg",
+            },
+          ],
         },
       ],
     },
     {
-      label: "Academia",
+      label: "academia",
       type: "dropdown",
       href: "/academia",
       items: [
         {
-          label: "Fotografía odontológica",
-          href: "/academia/fotografia-odontologica",
-          image: "/images/pre_post_01.jpg",
+          label: "especialidades",
+          href: "/academia/especialidades",
+          type: "group",
+          items: [
+            {
+              label: "fotografía odontológica",
+              href: "/academia/especialidades/fotografia-odontologica",
+              image: "/images/pre_post_01.jpg",
+            },
+            {
+              label: "prótesis completa",
+              href: "/academia/especialidades/protesis-completa",
+              image: "/images/pre_post_01.jpg",
+            },
+            {
+              label: "resinas con guía transparente",
+              href: "/academia/especialidades/resinas-guia-transparente",
+              image: "/images/pre_post_01.jpg",
+            },
+            {
+              label: "operatoria",
+              href: "/academia/especialidades/operatoria",
+              image: "/images/pre_post_01.jpg",
+            },
+            {
+              label: "rehabilitación oral",
+              href: "/academia/especialidades/rehabilitacion-oral",
+              image: "/images/pre_post_01.jpg",
+            },
+            {
+              label: "resinas estratificadas",
+              href: "/academia/especialidades/resinas-estratificadas",
+              image: "/images/pre_post_01.jpg",
+            },
+            {
+              label: "endodoncia",
+              href: "/academia/especialidades/endodoncia",
+              image: "/images/pre_post_01.jpg",
+            },
+            {
+              label: "periodoncia e implantes",
+              href: "/academia/especialidades/periodoncia-implantes",
+              image: "/images/pre_post_01.jpg",
+            },
+            {
+              label: "ortodoncia",
+              href: "/academia/especialidades/ortodoncia",
+              image: "/images/pre_post_01.jpg",
+            },
+            {
+              label: "odontología digital",
+              href: "/academia/especialidades/odontologia-digital",
+              image: "/images/pre_post_01.jpg",
+            },
+          ],
         },
         {
-          label: "Prótesis completa",
-          href: "/academia/protesis-completa",
-          image: "/images/pre_post_01.jpg",
+          label: "cursos",
+          href: "/academia/cursos",
+          type: "group",
+          items: [
+            {
+              label: "curso intensivo",
+              href: "/academia/cursos/resinas-intensivo",
+              image: "/images/pre_post_01.jpg",
+            },
+            {
+              label: "curso práctico de endodoncia",
+              href: "/academia/cursos/endodoncia-practica",
+              image: "/images/pre_post_01.jpg",
+            },
+            {
+              label: "curso de fotografía clínica",
+              href: "/academia/cursos/fotografia-clinica",
+              image: "/images/pre_post_01.jpg",
+            },
+          ],
         },
         {
-          label: "Resinas con guía transparente",
-          href: "/academia/resinas-guia-transparente",
-          image: "/images/pre_post_01.jpg",
-        },
-        {
-          label: "Operatoria",
-          href: "/academia/operatoria",
-          image: "/images/pre_post_01.jpg",
-        },
-        {
-          label: "Rehabilitación oral",
-          href: "/academia/rehabilitacion-oral",
-          image: "/images/pre_post_01.jpg",
-        },
-        {
-          label: "Resinas estratificadas",
-          href: "/academia/resinas-estratificadas",
-          image: "/images/pre_post_01.jpg",
-        },
-        {
-          label: "Endodoncia",
-          href: "/academia/endodoncia",
-          image: "/images/pre_post_01.jpg",
-        },
-        {
-          label: "Periodoncia e implantes",
-          href: "/academia/periodoncia-implantes",
-          image: "/images/pre_post_01.jpg",
-        },
-        {
-          label: "Ortodoncia",
-          href: "/academia/ortodoncia",
-          image: "/images/pre_post_01.jpg",
-        },
-        {
-          label: "Odontología digital",
-          href: "/academia/odontologia-digital",
-          image: "/images/pre_post_01.jpg",
+          label: "especiales",
+          href: "/academia/especiales",
+          type: "group",
+          items: [
+            {
+              label: "workshops",
+              href: "/academia/especiales/workshops",
+              image: "/images/pre_post_01.jpg",
+            },
+            {
+              label: "certificaciones",
+              href: "/academia/especiales/certificaciones",
+              image: "/images/pre_post_01.jpg",
+            },
+            {
+              label: "recidencia",
+              href: "/academia/especiales/recidencia",
+              image: "/images/pre_post_01.jpg",
+            },
+          ],
         },
       ],
     },
     {
-      label: "Laboratorio",
+      label: "laboratorio",
       type: "dropdown",
       href: "/laboratorio",
       items: [
         {
-          label: "Diseño digital",
-          href: "/laboratorio/diseno-digital",
-          image: "/images/pre_post_01.jpg",
+          label: "especialidades",
+          href: "/laboratorio/especialidades",
+          type: "group",
+          items: [
+            {
+              label: "diseño digital",
+              href: "/laboratorio/especialidades/diseno-digital",
+              image: "/images/pre_post_01.jpg",
+            },
+            {
+              label: "impresión 3d",
+              href: "/laboratorio/especialidades/impresion-3d",
+              image: "/images/pre_post_01.jpg",
+            },
+            {
+              label: "Escaneo intraoral",
+              href: "/laboratorio/especialidades/escaneo-intraoral",
+              image: "/images/pre_post_01.jpg",
+            },
+            {
+              label: "modelado cad",
+              href: "/laboratorio/especialidades/modelado-cad",
+              image: "/images/pre_post_01.jpg",
+            },
+            {
+              label: "simulación oclusal",
+              href: "/laboratorio/especialidades/simulacion-oclusal",
+              image: "/images/pre_post_01.jpg",
+            },
+            {
+              label: "planificación digital",
+              href: "/laboratorio/especialidades/planificacion-digital",
+              image: "/images/pre_post_01.jpg",
+            },
+          ],
         },
         {
-          label: "Impresión 3D",
-          href: "/laboratorio/impresion-3d",
-          image: "/images/pre_post_01.jpg",
-        },
-        {
-          label: "Escaneo intraoral",
-          href: "/laboratorio/escaneo-intraoral",
-          image: "/images/pre_post_01.jpg",
-        },
-        {
-          label: "Modelado CAD",
-          href: "/laboratorio/modelado-cad",
-          image: "/images/pre_post_01.jpg",
-        },
-        {
-          label: "Simulación oclusal",
-          href: "/laboratorio/simulacion-oclusal",
-          image: "/images/pre_post_01.jpg",
-        },
-        {
-          label: "Planificación digital",
-          href: "/laboratorio/planificacion-digital",
-          image: "/images/pre_post_01.jpg",
+          label: "servicios",
+          href: "/laboratorio/servicios",
+          type: "group",
+          items: [
+            {
+              label: "diseño de prótesis",
+              href: "/laboratorio/servicios/diseno-protesis",
+            },
+            {
+              label: "guías quirúrgicas",
+              href: "/laboratorio/servicios/guias-quirurgicas",
+            },
+            {
+              label: "flujo digital completo",
+              href: "/laboratorio/servicios/flujo-digital",
+            },
+          ],
         },
       ],
     },
     {
-      label: "Contacto",
-      href: "/contact",
-      type: "link",
-    },
-    {
-      label: "Productos",
+      label: "productos",
       href: "/productos",
       type: "link",
     },
     {
-      label: "Cart",
-      href: "/cart",
+      label: "carrito",
+      href: "/carrito",
       type: "cart",
       badge: 0,
     },

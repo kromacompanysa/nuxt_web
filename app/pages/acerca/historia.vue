@@ -1,6 +1,8 @@
 <template>
     <!-- Heading -->
-    <h1 class="text-4xl font-bold text-center pt-5">{{ aboutSection.label }}</h1>
+    <h1 class="text-4xl font-bold text-center pt-5">
+        {{ aboutSection.label }}
+    </h1>
     <!-- Section 1 -->
     <section
         class="relative flex items-center justify-center bg-white py-3 md:py-5"
@@ -100,8 +102,6 @@
 // Load navigation items from app.config.ts
 const navItems = useAppConfig().navbar;
 
-// obtener la sección nosotros 
-const aboutSection = navItems.find((item) => item.label === "Nosotros");
-
+// obtener la sección nosotros
+const aboutSection = navItems.find((item) => item.label === "nosotros");
 </script>
-
