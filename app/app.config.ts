@@ -15,6 +15,11 @@ export default defineAppConfig({
           type: "link",
           href: "/acerca/contacto",
         },
+        {
+          label: "ubicacion",
+          type: "link",
+          href: "/acerca/ubicacion",
+        },
       ],
     },
     {

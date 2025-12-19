@@ -31,7 +31,7 @@
                 }"
                 class="mySwiperHero hero-swiper"
             >
-                <SwiperSlide v-for="course in courses" :key="course.label">
+                <SwiperSlide v-for="course in cursos" :key="course.label">
                     <NuxtLink
                         :to="course.href"
                         class="block overflow-hidden relative w-full h-72 rounded-3xl shadow-md transition-all duration-500 hover:shadow-xl hover:-translate-y-1 group"
@@ -68,16 +68,21 @@ import "swiper/css/pagination";
 
 const navItems = useAppConfig().navbar;
 
-// Get Academia section
-const academiaSection = navItems.find((item) => item.label === "Academia");
-
-// Get Cursos group inside Academia
-const cursosGroup = academiaSection?.items?.find(
-    (group) => group.label === "Cursos",
+// 1️⃣ Get "academia"
+const academiaSection = navItems.find(
+    (item) => item.label === "academia",
 );
 
-// Get actual courses
-const courses = cursosGroup?.items ?? [];
+// 2️⃣ Get "curso" group
+const cursosSection = academiaSection?.items?.find(
+    (item) => item.label === "cursos",
+) ?? {
+    label: "cursos",
+    items: [],
+};
+
+// 3️⃣ Cards
+const cursos = cursosSection.items ?? [];
 </script>
 
 <style scoped>
@@ -85,3 +90,4 @@ const courses = cursosGroup?.items ?? [];
     padding-bottom: 40px;
 }
 </style>
+

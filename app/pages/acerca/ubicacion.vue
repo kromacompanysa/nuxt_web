@@ -1,9 +1,11 @@
+
 <template>
     <section class="max-w-6xl mx-auto px-6 py-10">
         <!-- Heading -->
-        <h1 class="text-4xl font-bold text-center pt-5 capitalize">
-            {{ contactoSection.label }}
-        </h1>
+        <!-- <h1 class="text-4xl font-bold text-center mb-4">contacto</h1> -->
+        <!-- <p class="text-center text-gray-500 mb-16"> -->
+        <!--   Encuéntranos y agenda tu cita con facilidad -->
+        <!-- </p> -->
 
         <!-- Layout -->
         <div class="grid md:grid-cols-2 gap-12 items-start">
@@ -55,12 +57,6 @@
 </template>
 
 <script setup>
-// Load navigation items from app.config.ts
-const navItems = useAppConfig().navbar;
-
-// obtener la sección nosotros
-const contactoSection = navItems.find((item) => item.label === "nosotros");
-
 const mapUrl =
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.790988!2d-77.002!3d-12.089!2m3!1f0!2f0!3f0";
 </script>

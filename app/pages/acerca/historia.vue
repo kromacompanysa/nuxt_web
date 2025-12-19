@@ -1,6 +1,6 @@
 <template>
     <!-- Heading -->
-    <h1 class="text-4xl font-bold text-center pt-5">
+    <h1 class="text-4xl font-bold text-center pt-5 capitalize">
         {{ aboutSection.label }}
     </h1>
     <!-- Section 1 -->
