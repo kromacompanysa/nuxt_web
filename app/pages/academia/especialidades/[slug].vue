@@ -2,14 +2,14 @@
     <main class="w-full">
         <!-- ================================
          HERO SECTION (Thinkific Style)
-    ================================= -->
+        ================================= -->
         <section
             class="relative h-[80vh] md:h-[85vh] flex items-center bg-cover bg-center"
             style="background-image: url(/images/hero_0.jpeg)"
         >
             <div class="max-w-4xl mx-auto px-6 text-black">
                 <h1 class="text-4xl md:text-6xl font-bold leading-tight">
-                    {{ courseTitle }}
+                    {{ especialidadItem.label }}
                 </h1>
 
                 <p class="mt-4 text-lg max-w-xl opacity-90">
@@ -37,7 +37,7 @@
 
         <!-- ================================
          3 ICON FEATURES
-    ================================= -->
+        ================================= -->
         <section class="py-20 bg-white">
             <div
                 class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12 text-center px-6"
@@ -91,7 +91,7 @@
 
         <!-- ================================
          BIG VIDEO HERO
-    ================================= -->
+        ================================= -->
         <section
             class="relative h-[60vh] md:h-[70vh] flex items-center justify-center bg-cover bg-center"
             style="background-image: url(/images/hero_0.jpeg)"
@@ -132,7 +132,7 @@
 
         <!-- ================================
          TEXT + IMAGE PREVIEW
-    ================================= -->
+        ================================= -->
         <section class="py-24 bg-white">
             <div
                 class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center px-6"
@@ -154,7 +154,7 @@
 
         <!-- ================================
          CAPÍTULO PREVIEW (LOOP)
-    ================================= -->
+        ================================= -->
         <section class="py-20 bg-gray-50">
             <h2 class="text-3xl font-light text-center mb-8">
                 Vista Previa del Curso
@@ -230,12 +230,22 @@
 <script setup>
 definePageMeta({ layout: "portal" });
 
+const navItems = useAppConfig().navbar;
 const route = useRoute();
 const slug = route.params.slug;
 
-const courseTitle = slug
-    .replace(/-/g, " ")
-    .replace(/\b\w/g, (char) => char.toUpperCase());
+const academiaSection = navItems.find(
+    (item) => item.label === "consultorio",
+);
+
+// Get especialidades group
+const especialidadesSection = academiaSection?.items?.find(
+    (item) => item.label === "especialidades",
+);
+
+const especialidadItem = especialidadesSection?.items?.find((item) =>
+    item.href?.endsWith(`/${slug}`),
+);
 
 const showVideo = ref(false);
 const openVideo = () => (showVideo.value = true);
@@ -249,3 +259,4 @@ h3 {
     font-family: "Inter", sans-serif;
 }
 </style>
+
