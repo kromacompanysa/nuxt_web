@@ -113,6 +113,7 @@ export default defineAppConfig({
         {
           label: "especialidades",
           href: "/academia/especialidades",
+          image: "/images/pre_post_01.jpg",
           type: "group",
           items: [
             {
@@ -170,6 +171,7 @@ export default defineAppConfig({
         {
           label: "cursos",
           href: "/academia/cursos",
+          image: "/images/pre_post_01.jpg",
           type: "group",
           items: [
             {
@@ -192,6 +194,7 @@ export default defineAppConfig({
         {
           label: "especiales",
           href: "/academia/especiales",
+          image: "/images/pre_post_01.jpg",
           type: "group",
           items: [
             {

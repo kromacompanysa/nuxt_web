@@ -28,7 +28,7 @@
 const navItems = useAppConfig().navbar;
 
 // obtener la sección Academia
-const academiaSection = navItems.find((item) => item.label === "Academia");
+const academiaSection = navItems.find((item) => item.label === "academia");
 
 // Los items ya incluyen label, href y image
 const cursosItems = academiaSection?.items ?? [];
