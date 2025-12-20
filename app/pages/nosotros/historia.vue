@@ -1,13 +1,15 @@
 <template>
     <!-- Heading -->
     <h1 class="text-4xl font-bold text-center pt-5 capitalize">
-        {{ aboutSection.label }}
+        {{ historiaSection.label }}
     </h1>
+
     <!-- Section 1 -->
     <section
         class="relative flex items-center justify-center bg-white py-3 md:py-5"
     >
         <div class="relative z-10 w-full max-w-6xl px-6 mx-auto">
+            <DefaultBreadcrumbs />
             <div class="grid md:grid-cols-2 gap-10 items-center">
                 <!-- Text -->
                 <div class="space-y-6 text-gray-700 text-justify order-1">
@@ -98,10 +100,18 @@
     <!-- Base Grid Component -->
     <DefaultSwiperGallery />
 </template>
+
 <script setup>
 // Load navigation items from app.config.ts
 const navItems = useAppConfig().navbar;
 
-// obtener la sección nosotros
-const aboutSection = navItems.find((item) => item.label === "nosotros");
+// 1️⃣ Get "nosotros" section
+const nosotrosSection = navItems.find((item) => item.label === "nosotros");
+
+// 2️⃣ Get "historia" item
+const historiaSection = nosotrosSection?.items?.find(
+    (item) => item.label === "historia",
+) ?? {
+    label: "historia",
+};
 </script>

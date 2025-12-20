@@ -37,7 +37,7 @@
 
         <!-- ================================
          3 ICON FEATURES
-    ================================= -->
+         ================================= -->
         <section class="py-20 bg-white">
             <div
                 class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12 text-center px-6"
@@ -91,7 +91,7 @@
 
         <!-- ================================
          BIG VIDEO HERO
-    ================================= -->
+         ================================= -->
         <section
             class="relative h-[60vh] md:h-[70vh] flex items-center justify-center bg-cover bg-center"
             style="background-image: url(/images/hero_0.jpeg)"
@@ -132,7 +132,7 @@
 
         <!-- ================================
          TEXT + IMAGE PREVIEW
-    ================================= -->
+         ================================= -->
         <section class="py-24 bg-white">
             <div
                 class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center px-6"
@@ -154,7 +154,7 @@
 
         <!-- ================================
          CAPÍTULO PREVIEW (LOOP)
-    ================================= -->
+         ================================= -->
         <section class="py-20 bg-gray-50">
             <h2 class="text-3xl font-light text-center mb-8">
                 Vista Previa del Curso

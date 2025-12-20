@@ -1,7 +1,6 @@
-
 <template>
     <section class="max-w-7xl mx-auto px-6 py-6">
-        <h1 class="text-3xl font-semibold text-center mb-10">
+        <h1 class="text-3xl font-semibold text-center mb-10 capitalize">
             {{ cursosSection.label }}
         </h1>
 
@@ -19,7 +18,9 @@
                     />
                 </div>
 
-                <h2 class="mt-3 text-lg font-medium group-hover:text-red-600">
+                <h2
+                    class="mt-3 text-lg font-medium group-hover:text-red-600 capitalize"
+                >
                     {{ item.label }}
                 </h2>
             </NuxtLink>
@@ -32,15 +33,13 @@
 const navItems = useAppConfig().navbar;
 
 // 1️⃣ Get "academia"
-const academiaSection = navItems.find(
-    (item) => item.label === "consultorio",
-);
+const academiaSection = navItems.find((item) => item.label === "academia");
 
 // 2️⃣ Get "curso" group
 const cursosSection = academiaSection?.items?.find(
-    (item) => item.label === "curso",
+    (item) => item.label === "cursos",
 ) ?? {
-    label: "curso",
+    label: "cursos",
     items: [],
 };
 

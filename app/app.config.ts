@@ -2,23 +2,32 @@ export default defineAppConfig({
   navbar: [
     {
       label: "nosotros",
-      href: "/acerca",
+      href: "/nosotros",
       type: "dropdown",
       items: [
         {
           label: "historia",
           type: "link",
-          href: "/acerca/historia",
+          image: "/images/pre_post_01.jpg",
+          href: "/nosotros/historia",
         },
         {
           label: "contacto",
           type: "link",
-          href: "/acerca/contacto",
+          image: "/images/pre_post_01.jpg",
+          href: "/nosotros/contacto",
+          email_from: "zultanete@gmail.pe",
+          email_to: "jorgeav527@gmail.com",
         },
         {
           label: "ubicacion",
           type: "link",
-          href: "/acerca/ubicacion",
+          image: "/images/pre_post_01.jpg",
+          href: "/nosotros/ubicacion",
+          mapUrl:
+            "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d608.1912766416547!2d-71.5234735430459!3d-16.409874778330668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424b0239f9f507%3A0x8587ee56077b30a2!2sAv.%20Lambramani%20175%2C%20Arequipa%2004002!5e0!3m2!1sen!2spe!4v1764101713789!5m2!1sen!2spe",
+          mapLink:
+            "https://www.google.com/maps/place/Av.+Lambramani+175,+Arequipa+04002",
         },
       ],
     },
@@ -224,6 +233,7 @@ export default defineAppConfig({
         {
           label: "especialidades",
           href: "/laboratorio/especialidades",
+          image: "/images/pre_post_01.jpg",
           type: "group",
           items: [
             {
@@ -261,6 +271,7 @@ export default defineAppConfig({
         {
           label: "servicios",
           href: "/laboratorio/servicios",
+          image: "/images/pre_post_01.jpg",
           type: "group",
           items: [
             {
@@ -282,7 +293,21 @@ export default defineAppConfig({
     {
       label: "productos",
       href: "/productos",
-      type: "link",
+      type: "dropdown",
+      items: [
+        {
+          label: "proceso",
+          type: "link",
+          href: "/productos/proceso",
+          image: "/images/pre_post_01.jpg",
+        },
+        {
+          label: "terminos",
+          type: "link",
+          href: "/productos/terminos",
+          image: "/images/pre_post_01.jpg",
+        },
+      ],
     },
     {
       label: "carrito",

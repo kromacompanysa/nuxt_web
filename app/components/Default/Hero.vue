@@ -1,5 +1,5 @@
 <template>
-    <section class="relative min-h-[85vh] overflow-hidden w-screen">
+    <section class="relative min-h-[85vh] overflow-hidden w-full">
         <Swiper
             :key="swiperKey"
             :modules="swiperModules"
@@ -53,14 +53,14 @@
                 class="flex flex-col sm:flex-row justify-center gap-5 pt-10 w-full mx-auto"
             >
                 <NuxtLink
-                    to="/acerca/contacto"
+                    to="/nosotros/contacto"
                     class="px-8 py-4 text-lg bg-red-600 text-white rounded-xl shadow-lg hover:bg-red-700 hover:shadow-xl transition-all"
                 >
                     Agenda tu cita
                 </NuxtLink>
 
                 <NuxtLink
-                    to="/acerca/historia"
+                    to="/nosotros/historia"
                     class="px-8 py-4 text-lg bg-gray-900 text-white rounded-xl shadow-lg hover:bg-gray-800 hover:shadow-xl transition-all"
                 >
                     Conócenos
@@ -114,5 +114,19 @@ const swiperModules = computed(() => {
     inset: 0;
     width: 100%;
     height: 100%;
+}
+.heroBackgroundSwiper :deep(.swiper-button-prev) {
+    left: 2rem;
+}
+
+.heroBackgroundSwiper :deep(.swiper-button-next) {
+    right: 2rem;
+}
+
+.heroBackgroundSwiper :deep(.swiper-button-prev),
+.heroBackgroundSwiper :deep(.swiper-button-next) {
+    color: #1f2937; /* gray-800 */
+    width: 44px;
+    height: 44px;
 }
 </style>

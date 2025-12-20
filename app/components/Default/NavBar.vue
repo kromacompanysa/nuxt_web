@@ -37,7 +37,7 @@
                             <!-- Texto que navega -->
                             <a
                                 :href="item.href"
-                                class="transition hover:text-red-600"
+                                class="transition hover:text-red-600 capitalize"
                             >
                                 {{ item.label }}
                             </a>
@@ -69,7 +69,7 @@
                                 <li v-for="sub in item.items" :key="sub.label">
                                     <a
                                         :href="sub.href"
-                                        class="block px-4 py-2 hover:bg-gray-100 hover:text-red-600 transition"
+                                        class="block px-4 py-2 hover:bg-gray-100 hover:text-red-600 transition capitalize"
                                     >
                                         {{ sub.label }}
                                     </a>
@@ -169,7 +169,7 @@
                             <li v-for="sub in item.items" :key="sub.label">
                                 <a
                                     :href="sub.href"
-                                    class="block py-1 px-2 rounded transition hover:text-blue-600 hover:bg-gray-100"
+                                    class="block py-1 px-2 rounded transition hover:text-blue-600 hover:bg-gray-100 capitalize"
                                 >
                                     {{ sub.label }}
                                 </a>

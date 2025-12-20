@@ -9,7 +9,7 @@
         >
             <div class="max-w-4xl mx-auto px-6 text-black">
                 <h1 class="text-4xl md:text-6xl font-bold leading-tight">
-                    {{ cursoItem.label }}
+                    {{ servicioItem.label }}
                 </h1>
 
                 <p class="mt-4 text-lg max-w-xl opacity-90">
@@ -235,15 +235,15 @@ const route = useRoute();
 const slug = route.params.slug;
 
 const laboratorioSection = navItems.find(
-    (item) => item.label === "consultorio",
+    (item) => item.label === "laboratorio",
 );
 
-// Get especialidades group
-const cursosSection = laboratorioSection?.items?.find(
-    (item) => item.label === "especialidades",
+// Get servicios group
+const serviciosSection = laboratorioSection?.items?.find(
+    (item) => item.label === "servicios",
 );
 
-const cursoItem = cursosSection?.items?.find((item) =>
+const servicioItem = serviciosSection?.items?.find((item) =>
     item.href?.endsWith(`/${slug}`),
 );
 
@@ -259,5 +259,3 @@ h3 {
     font-family: "Inter", sans-serif;
 }
 </style>
-
-

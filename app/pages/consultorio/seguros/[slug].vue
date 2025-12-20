@@ -9,7 +9,7 @@
         >
             <div class="max-w-4xl mx-auto px-6 text-black">
                 <h1 class="text-4xl md:text-6xl font-bold leading-tight">
-                    {{ seguroItem.label }}
+                    {{ segurosItem.label }}
                 </h1>
 
                 <p class="mt-4 text-lg max-w-xl opacity-90">
@@ -37,7 +37,7 @@
 
         <!-- ================================
          3 ICON FEATURES
-    ================================= -->
+         ================================= -->
         <section class="py-20 bg-white">
             <div
                 class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12 text-center px-6"
@@ -91,7 +91,7 @@
 
         <!-- ================================
          BIG VIDEO HERO
-    ================================= -->
+         ================================= -->
         <section
             class="relative h-[60vh] md:h-[70vh] flex items-center justify-center bg-cover bg-center"
             style="background-image: url(/images/hero_0.jpeg)"
@@ -132,7 +132,7 @@
 
         <!-- ================================
          TEXT + IMAGE PREVIEW
-    ================================= -->
+         ================================= -->
         <section class="py-24 bg-white">
             <div
                 class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center px-6"
@@ -154,7 +154,7 @@
 
         <!-- ================================
          CAPÍTULO PREVIEW (LOOP)
-    ================================= -->
+         ================================= -->
         <section class="py-20 bg-gray-50">
             <h2 class="text-3xl font-light text-center mb-8">
                 Vista Previa del Curso
@@ -230,23 +230,20 @@
 <script setup>
 definePageMeta({ layout: "portal" });
 
-// Get app.config.ts, route and slug
 const navItems = useAppConfig().navbar;
 const route = useRoute();
 const slug = route.params.slug;
 
-// Get consultorio
 const consultorioSection = navItems.find(
     (item) => item.label === "consultorio",
 );
 
-// Get Seguros group
-const segurosSection = consultorioSection?.items?.find(
-    (item) => item.label === "Seguros",
+// Get seguros group
+const especialidadesSection = consultorioSection?.items?.find(
+    (item) => item.label === "seguros",
 );
 
-// Get the EXACT item by slug (no fallback, no inference)
-const seguroItem = segurosSection?.items?.find((item) =>
+const segurosItem = especialidadesSection?.items?.find((item) =>
     item.href?.endsWith(`/${slug}`),
 );
 

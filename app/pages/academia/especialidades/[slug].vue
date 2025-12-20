@@ -234,9 +234,7 @@ const navItems = useAppConfig().navbar;
 const route = useRoute();
 const slug = route.params.slug;
 
-const academiaSection = navItems.find(
-    (item) => item.label === "consultorio",
-);
+const academiaSection = navItems.find((item) => item.label === "academia");
 
 // Get especialidades group
 const especialidadesSection = academiaSection?.items?.find(
@@ -259,4 +257,3 @@ h3 {
     font-family: "Inter", sans-serif;
 }
 </style>
-
