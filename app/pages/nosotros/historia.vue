@@ -1,6 +1,9 @@
 <template>
     <!-- Heading -->
-    <h1 class="text-4xl font-bold text-center pt-5">Nuestra Historia</h1>
+    <h1 class="text-4xl font-bold text-center pt-5 capitalize">
+        {{ historiaSection?.label ?? "x" }}
+    </h1>
+
     <!-- Section 1 -->
     <section
         class="relative flex items-center justify-center bg-white py-3 md:py-5"
@@ -96,3 +99,18 @@
     <!-- Base Grid Component -->
     <DefaultSwiperGallery />
 </template>
+
+<script setup>
+// Load navigation items from app.config.ts
+const navItems = useAppConfig().navbar;
+
+// 1️⃣ Get "nosotros" section
+const nosotrosSection = navItems.find((item) => item.label === "nosotros");
+
+// 2️⃣ Get "historia" item
+const historiaSection = nosotrosSection?.items?.find(
+    (item) => item.label === "historia",
+) ?? {
+    label: "historia",
+};
+</script>
