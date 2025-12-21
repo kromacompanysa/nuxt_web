@@ -1,7 +1,7 @@
 <template>
     <section class="max-w-7xl mx-auto px-6 py-6">
         <h1 class="text-3xl font-semibold text-center mb-10 capitalize">
-            {{ nosotrosSection.label }}
+            {{ nosotrosSection?.label ?? "x" }}
         </h1>
 
         <DefaultBreadcrumbs />

@@ -247,7 +247,7 @@ export default defineAppConfig({
               image: "/images/pre_post_01.jpg",
             },
             {
-              label: "Escaneo intraoral",
+              label: "escaneo intraoral",
               href: "/laboratorio/especialidades/escaneo-intraoral",
               image: "/images/pre_post_01.jpg",
             },
@@ -257,7 +257,7 @@ export default defineAppConfig({
               image: "/images/pre_post_01.jpg",
             },
             {
-              label: "simulación oclusal",
+              label: "simulacion oclusal",
               href: "/laboratorio/especialidades/simulacion-oclusal",
               image: "/images/pre_post_01.jpg",
             },

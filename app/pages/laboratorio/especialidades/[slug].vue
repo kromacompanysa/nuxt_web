@@ -9,7 +9,7 @@
         >
             <div class="max-w-4xl mx-auto px-6 text-black">
                 <h1 class="text-4xl md:text-6xl font-bold leading-tight">
-                    {{ especialidadItem.label }}
+                    {{ especialidadItem?.label ?? "x" }}
                 </h1>
 
                 <p class="mt-4 text-lg max-w-xl opacity-90">
@@ -259,4 +259,3 @@ h3 {
     font-family: "Inter", sans-serif;
 }
 </style>
-

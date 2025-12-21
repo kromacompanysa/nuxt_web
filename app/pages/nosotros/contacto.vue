@@ -2,7 +2,7 @@
     <section class="max-w-6xl mx-auto px-6">
         <!-- Heading -->
         <h1 class="text-4xl font-bold text-center py-5 capitalize">
-            {{ contactoSection.label }}
+            {{ contactoSection?.label ?? "x" }}
         </h1>
 
         <!-- Layout -->

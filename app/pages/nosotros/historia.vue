@@ -1,7 +1,7 @@
 <template>
     <!-- Heading -->
     <h1 class="text-4xl font-bold text-center pt-5 capitalize">
-        {{ historiaSection.label }}
+        {{ historiaSection?.label ?? "x" }}
     </h1>
 
     <!-- Section 1 -->
