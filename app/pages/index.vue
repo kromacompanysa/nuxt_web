@@ -14,3 +14,9 @@
         <DefaultPreFooter />
     </section>
 </template>
+
+<script setup>
+definePageMeta({
+    breadcrumbs: false,
+});
+</script>

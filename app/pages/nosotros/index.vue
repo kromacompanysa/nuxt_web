@@ -21,7 +21,7 @@
             <div class="overflow-hidden rounded-xl shadow-lg">
                 <img
                     :src="item.image ?? '/images/pre_post_01.jpg'"
-                    class="w-full h-[320px] object-cover transition-transform duration-500 hover:scale-105"
+                    class="w-full h-80 object-cover transition-transform duration-500 hover:scale-105"
                 />
             </div>
 

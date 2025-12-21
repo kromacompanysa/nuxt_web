@@ -6,7 +6,7 @@
 
         <!-- Page Content -->
         <main class="flex-1 pt-[90px]">
-            <div class="max-w-7xl mx-auto px-6 py-1">
+            <div v-if="showBreadcrumbs" class="max-w-7xl mx-auto px-6 py-1">
                 <DefaultBreadcrumbs />
             </div>
             <!-- pt-[90px] ensures the header does NOT overlap -->
@@ -17,6 +17,16 @@
         <DefaultFooter />
     </div>
 </template>
+
+<script setup>
+import { useRoute } from "vue-router";
+
+const route = useRoute();
+
+const showBreadcrumbs = computed(() => {
+    return route.meta?.breadcrumbs !== false;
+});
+</script>
 
 <style scoped>
 /* Optional: smooth page transitions */
