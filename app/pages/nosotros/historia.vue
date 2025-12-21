@@ -9,7 +9,6 @@
         class="relative flex items-center justify-center bg-white py-3 md:py-5"
     >
         <div class="relative z-10 w-full max-w-6xl px-6 mx-auto">
-            <DefaultBreadcrumbs />
             <div class="grid md:grid-cols-2 gap-10 items-center">
                 <!-- Text -->
                 <div class="space-y-6 text-gray-700 text-justify order-1">

@@ -1,31 +1,51 @@
 <template>
-    <section class="max-w-7xl mx-auto px-6 py-6">
-        <h1 class="text-3xl font-semibold text-center mb-10 capitalize">
-            {{ nosotrosSection?.label ?? "x" }}
-        </h1>
+    <section class="max-w-6xl mx-auto px-6 pb-12 space-y-12">
+        <!-- Page Title -->
+        <header class="text-center">
+            <h1 class="text-4xl md:text-5xl font-semibold capitalize">
+                {{ nosotrosSection?.label ?? "Nosotros" }}
+            </h1>
+            <p class="mt-4 text-gray-500 max-w-2xl mx-auto">
+                Conoce nuestra historia, cómo contactarnos y dónde encontrarnos.
+            </p>
+        </header>
 
-        <DefaultBreadcrumbs />
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-            <NuxtLink
-                v-for="item in nosotrosItems"
-                :key="item.href"
-                :to="item.href"
-                class="block group"
-            >
-                <div class="overflow-hidden rounded-lg shadow-md">
-                    <img
-                        :src="item.image ?? '/images/pre_post_01.jpg'"
-                        class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                </div>
+        <!-- Sections -->
+        <article
+            v-for="(item, index) in nosotrosItems"
+            :key="item.href"
+            class="grid md:grid-cols-2 gap-12 items-center"
+            :class="{ 'md:flex-row-reverse': index % 2 !== 0 }"
+        >
+            <!-- Image -->
+            <div class="overflow-hidden rounded-xl shadow-lg">
+                <img
+                    :src="item.image ?? '/images/pre_post_01.jpg'"
+                    class="w-full h-[320px] object-cover transition-transform duration-500 hover:scale-105"
+                />
+            </div>
 
-                <h2
-                    class="mt-3 text-lg font-medium capitalize group-hover:text-red-600"
-                >
+            <!-- Content -->
+            <div>
+                <h2 class="text-3xl font-medium capitalize">
                     {{ item.label }}
                 </h2>
-            </NuxtLink>
-        </div>
+
+                <p class="mt-4 text-gray-600 leading-relaxed">
+                    {{
+                        item.description ??
+                        "Descubre más información relevante sobre esta sección de Kroma."
+                    }}
+                </p>
+
+                <NuxtLink
+                    :to="item.href"
+                    class="inline-block mt-6 text-red-600 font-medium hover:underline"
+                >
+                    Ver más →
+                </NuxtLink>
+            </div>
+        </article>
     </section>
 </template>
 

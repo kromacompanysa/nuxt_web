@@ -9,7 +9,6 @@
         <div class="grid md:grid-cols-2 gap-12 items-start">
             <!-- LEFT: Info -->
             <div class="space-y-6">
-                <DefaultBreadcrumbs />
                 <div class="bg-white shadow-lg rounded-2xl p-8">
                     <h3
                         class="text-2xl font-semibold mb-4 flex items-center gap-2"

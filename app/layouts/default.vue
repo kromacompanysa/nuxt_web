@@ -6,6 +6,9 @@
 
         <!-- Page Content -->
         <main class="flex-1 pt-[90px]">
+            <div class="max-w-7xl mx-auto px-6 py-1">
+                <DefaultBreadcrumbs />
+            </div>
             <!-- pt-[90px] ensures the header does NOT overlap -->
             <slot />
         </main>
