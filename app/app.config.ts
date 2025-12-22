@@ -198,6 +198,11 @@ export default defineAppConfig({
               href: "/academia/cursos/fotografia-clinica",
               image: "/images/pre_post_01.jpg",
             },
+            {
+              label: "curso de no sé",
+              href: "/academia/cursos/no-se",
+              image: "/images/pre_post_01.jpg",
+            },
           ],
         },
         {
