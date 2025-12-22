@@ -1,41 +1,87 @@
 <template>
-    <section class="max-w-7xl mx-auto px-6 py-6">
-        <h1 class="text-3xl font-semibold text-center mb-10 capitalize">
-            {{ laboratorioSection?.label ?? "x" }}
-        </h1>
+    <section class="max-w-6xl mx-auto px-6 pb-12 space-y-12">
+        <!-- Page Title -->
+        <header class="text-center">
+            <h1 class="text-4xl md:text-5xl font-semibold capitalize">
+                {{ laboratorioSection.label }}
+            </h1>
+            <p class="mt-4 text-gray-500 max-w-2xl mx-auto">
+                Conoce nuestros servicios, especialidades y beneficios para ti.
+            </p>
+        </header>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-            <NuxtLink
-                v-for="item in laboratorioItems"
-                :key="item.href"
-                :to="item.href"
-                class="block group"
-            >
-                <div class="overflow-hidden rounded-lg shadow-md">
-                    <img
-                        :src="item.image"
-                        class="w-full h-48 object-cover group-hover:scale-105 transition"
-                    />
-                </div>
+        <!-- Sections -->
+        <article
+            v-for="(item, index) in laboratorioItems"
+            :key="item.href"
+            class="grid md:grid-cols-2 gap-12 items-center"
+            :class="{ 'md:flex-row-reverse': index % 2 !== 0 }"
+        >
+            <!-- Image -->
+            <div class="overflow-hidden rounded-xl shadow-lg">
+                <img
+                    :src="item.image ?? '/images/pre_post_01.jpg'"
+                    class="w-full h-80 object-cover transition-transform duration-500 hover:scale-105"
+                />
+            </div>
 
-                <h2
-                    class="mt-3 text-lg font-medium group-hover:text-red-600 capitalize"
-                >
+            <!-- Content -->
+            <div>
+                <h2 class="text-3xl font-medium capitalize">
                     {{ item.label }}
                 </h2>
-            </NuxtLink>
-        </div>
+
+                <p class="mt-4 text-gray-600 leading-relaxed">
+                    {{
+                        item.description ??
+                        "Descubre más información relevante sobre esta sección del laboratorio."
+                    }}
+                </p>
+
+                <!-- Dynamic group items (especialidades, seguros, etc.) -->
+                <ul
+                    v-if="item.type === 'group' && item.items?.length"
+                    class="mt-6 flex flex-wrap gap-1"
+                >
+                    <li
+                        v-for="child in item.items"
+                        :key="child.href"
+                    >
+                        <NuxtLink
+                            :to="child.href"
+                            class="inline-block px-2 py-1 border rounded-full text-sm
+                                   hover:bg-red-50 hover:text-red-600 transition capitalize"
+                        >
+                            {{ child.label }}
+                        </NuxtLink>
+                    </li>
+                </ul>
+
+                <NuxtLink
+                    :to="item.href"
+                    class="inline-block mt-6 text-red-600 font-medium hover:underline"
+                >
+                    Ver más →
+                </NuxtLink>
+            </div>
+        </article>
     </section>
 </template>
 
 <script setup>
+// Load navbar config
 const navItems = useAppConfig().navbar;
 
-// obtener la sección Laboratorio
-const laboratorioSection = navItems.find(
-    (item) => item.label === "laboratorio",
-);
+// Get "laboratorio" section
+const laboratorioSection =
+    navItems.find((item) => item.label === "laboratorio") ?? {
+        label: "laboratorio",
+        items: [],
+    };
 
-// Los items ya incluyen label, href y image
-const laboratorioItems = laboratorioSection?.items ?? [];
+// Items (especialidades, seguros, etc.)
+const laboratorioItems = laboratorioSection.items ?? [];
 </script>
+
+
+

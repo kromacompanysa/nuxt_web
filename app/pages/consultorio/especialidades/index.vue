@@ -33,9 +33,11 @@
 const navItems = useAppConfig().navbar;
 
 // 1️⃣ Get "consultorio"
-const consultorioSection = navItems.find(
-    (item) => item.label === "consultorio",
-);
+const consultorioSection =
+    navItems.find((item) => item.label === "consultorio") ?? {
+        label: "consultorio",
+        items: [],
+    };
 
 // 2️⃣ Get "especialidades" group
 const especialidadesSection = consultorioSection?.items?.find(

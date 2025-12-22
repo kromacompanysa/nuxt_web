@@ -28,7 +28,7 @@
             <!-- Content -->
             <div>
                 <h2 class="text-3xl font-medium capitalize">
-                    {{ item.label }}
+                    {{ item.label ?? "x" }}
                 </h2>
 
                 <p class="mt-4 text-gray-600 leading-relaxed">
@@ -37,13 +37,12 @@
                         "Descubre más información relevante sobre esta sección de Kroma."
                     }}
                 </p>
-
                 <NuxtLink
-                    :to="item.href"
+                    :to="item.href ?? 'x'"
                     class="inline-block mt-6 text-red-600 font-medium hover:underline"
                 >
                     Ver más →
-                </NuxtLink>
+                </NuxtLink>            
             </div>
         </article>
     </section>
