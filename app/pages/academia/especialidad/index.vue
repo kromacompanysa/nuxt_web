@@ -9,13 +9,13 @@
 const navItems = useAppConfig().navbar;
 
 // 1️⃣ Get "academia"
-const section = navItems.find((item) => item.label === "laboratorio");
+const section = navItems.find((item) => item.label === "academia");
 
 // 2️⃣ Get "cursos virtuales" group
 const listSection = section?.items?.find(
-  (item) => item.label === "servicios",
+  (item) => item.label === "especialidad",
 ) ?? {
-  label: "servicios",
+  label: "especialidad",
   items: [],
 };
 
