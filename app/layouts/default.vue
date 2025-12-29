@@ -15,6 +15,11 @@
 
     <!-- Footer -->
     <DefaultFooter />
+    <DefaultWhatsAppLink
+      phone="51980102233"
+      message="Hola, quiero información sobre sus servicios 👋"
+      class="fixed bottom-6 right-6 z-50"
+    />
   </div>
 </template>
 
