@@ -26,8 +26,7 @@ export default defineAppConfig({
           href: "/nosotros/ubicacion",
           mapUrl:
             "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d608.1912766416547!2d-71.5234735430459!3d-16.409874778330668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424b0239f9f507%3A0x8587ee56077b30a2!2sAv.%20Lambramani%20175%2C%20Arequipa%2004002!5e0!3m2!1sen!2spe!4v1764101713789!5m2!1sen!2spe",
-          mapLink:
-            "https://www.google.com/maps/place/Av.+Lambramani+175,+Arequipa+04002",
+          mapLink: "https://www.google.com/maps/place/Av.+Lambramani+175,+Arequipa+04002",
         },
       ],
     },
@@ -289,11 +288,11 @@ export default defineAppConfig({
     },
   ],
   gallery: [
-    "~/assets/images/pre_post_01.jpg",
-    "~/assets/images/pre_post_01.jpg",
-    "~/assets/images/pre_post_01.jpg",
-    "~/assets/images/pre_post_01.jpg",
-    "~/assets/images/pre_post_01.jpg",
-    "~/assets/images/pre_post_01.jpg",
+    "/images/pre_post_01.jpg",
+    "/images/pre_post_02.jpeg",
+    "/images/pre_post_03.jpeg",
+    "/images/pre_post_01.jpg",
+    "/images/pre_post_01.jpg",
+    "/images/pre_post_01.jpg",
   ],
 });

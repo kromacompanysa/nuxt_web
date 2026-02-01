@@ -2,11 +2,12 @@
   <header
     class="fixed top-0 z-50 w-full shadow-sm transition-all duration-300 bg-white/90 backdrop-blur-md"
   >
-    <div
-      class="flex justify-between items-center py-3 px-6 mx-auto max-w-7xl md:py-4"
-    >
+    <div class="flex justify-between items-center py-3 px-6 mx-auto max-w-7xl md:py-4">
       <!-- Logo -->
-      <a href="/" class="flex items-center space-x-2 group">
+      <a
+        href="/"
+        class="flex items-center space-x-2 group"
+      >
         <img
           src="/images/kroma_png_black.png"
           alt="Kroma Logo"
@@ -16,7 +17,10 @@
 
       <!-- DESKTOP NAV -->
       <nav class="hidden md:flex items-center space-x-8 font-medium text-black">
-        <template v-for="item in navItems" :key="item.label">
+        <template
+          v-for="item in navItems"
+          :key="item.label"
+        >
           <!-- Regular Link -->
           <a
             v-if="item.type === 'link'"
@@ -27,7 +31,10 @@
           </a>
 
           <!-- Dropdown -->
-          <div v-else-if="item.type === 'dropdown'" class="relative group">
+          <div
+            v-else-if="item.type === 'dropdown'"
+            class="relative group"
+          >
             <div class="flex items-center space-x-1">
               <!-- Texto que navega -->
               <a
@@ -61,7 +68,10 @@
               class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md border border-gray-100 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition duration-200 before:absolute before:-top-3 before:left-0 before:w-full before:h-6 before:bg-transparent before:content-['']"
             >
               <ul class="py-2">
-                <li v-for="sub in item.items" :key="sub.label">
+                <li
+                  v-for="sub in item.items"
+                  :key="sub.label"
+                >
                   <a
                     :href="sub.href"
                     class="block px-4 py-2 hover:bg-gray-100 hover:text-red-600 transition capitalize"
@@ -79,7 +89,11 @@
             :href="item.href"
             class="flex relative items-center transition-colors hover:text-red-600"
           >
-            <img src="/icons/cart4.svg" class="w-5 h-5" alt="Cart" />
+            <img
+              src="/icons/cart4.svg"
+              class="w-5 h-5"
+              alt="Cart"
+            />
 
             <span
               class="absolute -top-2 -right-4 px-1.5 py-0.5 text-xs bg-red-600 text-white rounded-full"
@@ -114,16 +128,12 @@
     </div>
 
     <!-- MOBILE NAV -->
-    <div
-      :class="[
-        'md:hidden border-t border-gray-200 bg-white',
-        open ? 'block' : 'hidden',
-      ]"
-    >
-      <ul
-        class="flex flex-col p-4 space-y-2 font-medium text-gray-700 capitalize"
-      >
-        <li v-for="item in navItems" :key="item.label">
+    <div :class="['md:hidden border-t border-gray-200 bg-white', open ? 'block' : 'hidden']">
+      <ul class="flex flex-col p-4 space-y-2 font-medium text-gray-700 capitalize">
+        <li
+          v-for="item in navItems"
+          :key="item.label"
+        >
           <!-- Link -->
           <a
             v-if="item.type === 'link'"
@@ -157,7 +167,10 @@
             </summary>
 
             <ul class="py-2 pl-6 pr-2 space-y-1 bg-gray-50 rounded-md">
-              <li v-for="sub in item.items" :key="sub.label">
+              <li
+                v-for="sub in item.items"
+                :key="sub.label"
+              >
                 <a
                   :href="sub.href"
                   class="block py-1 px-2 rounded transition hover:text-blue-600 hover:bg-gray-100 capitalize"
@@ -174,12 +187,13 @@
             :href="item.href"
             class="flex gap-2 items-center py-2 px-4 rounded-md transition hover:text-blue-600 hover:bg-gray-100"
           >
-            <img src="/icons/cart4.svg" class="w-5 h-5" />
+            <img
+              src="/icons/cart4.svg"
+              class="w-5 h-5"
+            />
             <span>Carrito</span>
 
-            <span
-              class="ml-auto py-0.5 px-1.5 bg-red-600 text-white rounded-full text-[10px]"
-            >
+            <span class="ml-auto py-0.5 px-1.5 bg-red-600 text-white rounded-full text-[10px]">
               {{ item.badge }}
             </span>
           </a>
@@ -190,11 +204,11 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+  import { ref } from "vue";
 
-// Load navigation items from app.config.ts
-const navItems = useAppConfig().navbar;
+  // Load navigation items from app.config.ts
+  const navItems = useAppConfig().navbar;
 
-// Mobile menu toggle
-const open = ref(false);
+  // Mobile menu toggle
+  const open = ref(false);
 </script>
