@@ -12,6 +12,15 @@ export default defineNuxtConfig({
   app: {
     baseURL: "/",
     cdnURL: "/",
+    head: {
+      link: [
+        {
+          rel: "icon",
+          type: "image/jpeg",
+          href: "/favicon.jpeg",
+        },
+      ],
+    },
   },
   nitro: {
     preset: "static",
