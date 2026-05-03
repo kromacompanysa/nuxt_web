@@ -3,32 +3,49 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
   srcDir: "app/",
+
   components: [
     {
       path: "~/components",
       pathPrefix: true,
     },
   ],
+
   app: {
     baseURL: "/",
-    cdnURL: "/",
     head: {
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1',
+      title: 'Dental Clinic - Kroma', // Good for SEO
       link: [
         {
           rel: "icon",
-          type: "image/jpeg",
+          type: "image/jpeg", // Double check if it's .jpeg or .jpg or .png
           href: "/favicon.jpeg",
         },
       ],
     },
   },
+
   nitro: {
     preset: "static",
   },
+
   compatibilityDate: "2025-07-15",
+
   devtools: { enabled: true },
+
   css: ["./app/assets/css/main.css"],
+
   vite: {
     plugins: [tailwindcss()],
+    optimizeDeps: {
+      include: [
+        "@vue/devtools-core",
+        "@vue/devtools-kit",
+        "swiper/vue",
+        "swiper/modules",
+      ],
+    },
   },
 });
