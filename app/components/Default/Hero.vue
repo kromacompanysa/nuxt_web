@@ -13,7 +13,7 @@
           : false
       "
       :navigation="!isMobile"
-      :allowTouchMove="true"
+      :allow-touch-move="true"
       :speed="800"
       class="heroBackgroundSwiper"
     >
@@ -31,7 +31,7 @@
 
     <div
       class="absolute inset-0 bg-linear-to-b from-white/70 via-white/60 to-white/40 backdrop-blur-[2px]"
-    ></div>
+    />
 
     <div
       class="relative z-10 max-w-4xl mx-auto px-6 pt-40 pb-28 text-center text-gray-900"

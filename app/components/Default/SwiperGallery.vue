@@ -13,7 +13,8 @@
 
         <!-- Full-width Swiper -->
         <div class="w-full">
-            <Swiper :modules="[Grid, Pagination]" :grid="{ rows: 2, fill: 'row' }" :slides-per-view="3"
+            <Swiper
+:modules="[Grid, Pagination]" :grid="{ rows: 2, fill: 'row' }" :slides-per-view="3"
                 :space-between="1" :pagination="{ clickable: true }" :breakpoints="{
                     320: { slidesPerView: 1, grid: { rows: 1 } },
                     640: { slidesPerView: 2, grid: { rows: 2 } },
@@ -21,7 +22,7 @@
                 }" class="mySwiperBoxes">
                 <SwiperSlide v-for="(img, i) in gallery" :key="i">
                     <div class="overflow-hidden relative h-64">
-                        <img :src="img" alt="Caso de éxito Kroma" class="object-cover absolute inset-0 w-full h-full" />
+                        <img :src="img" alt="Caso de éxito Kroma" class="object-cover absolute inset-0 w-full h-full" >
                     </div>
                 </SwiperSlide>
             </Swiper>
@@ -30,13 +31,13 @@
 </template>
 
 <script setup>
-const appConfig = useAppConfig();
-
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Grid, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/grid";
 import "swiper/css/pagination";
+
+const appConfig = useAppConfig();
 
 const gallery = appConfig.gallery;
 </script>

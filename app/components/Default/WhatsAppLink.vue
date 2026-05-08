@@ -10,7 +10,7 @@
       src="/icons/whatsapp.svg"
       alt="WhatsApp"
       class="w-6 h-6 sm:w-7 sm:h-7 pointer-events-none"
-    />
+    >
   </a>
 </template>
 

@@ -11,13 +11,14 @@
                         <h3 class="text-2xl font-semibold mb-4 flex items-center gap-2">
                             <span class="text-red-600">✉️</span> Contáctanos
                         </h3>
-                        <p class="text-gray-700 leading-relaxed">Consultorio Kroma <br /></p>
+                        <p class="text-gray-700 leading-relaxed">Consultorio Kroma <br ></p>
                         <div class="mt-6 space-y-2 text-gray-600">
                             <p>📞 +51 999 999 999</p>
                             <p>✉ contacto@kroma.pe</p>
                             <p>🕐 Lun - Sáb : 9:00 AM - 7:00 PM</p>
                         </div>
-                        <a href="mailto:contacto@kroma.pe"
+                        <a
+href="mailto:contacto@kroma.pe"
                             class="inline-block mt-6 bg-red-600 text-white px-6 py-3 rounded-full hover:bg-red-700 transition">
                             Enviar correo
                         </a>
@@ -26,18 +27,21 @@
 
                 <div class="bg-white shadow-lg rounded-2xl p-8">
                     <h3 class="text-2xl font-semibold mb-6">Escríbenos</h3>
-                    <form @submit.prevent="submitForm" class="space-y-4">
+                    <form class="space-y-4" @submit.prevent="submitForm">
                         <div>
                             <label class="block text-sm text-gray-600 mb-1">Tu correo</label>
-                            <input v-model="form.email" type="email" required placeholder="tu@email.com"
-                                class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" />
+                            <input
+v-model="form.email" type="email" required placeholder="tu@email.com"
+                                class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" >
                         </div>
                         <div>
                             <label class="block text-sm text-gray-600 mb-1">Mensaje</label>
-                            <textarea v-model="form.message" rows="4" required placeholder="Escribe tu mensaje..."
-                                class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"></textarea>
+                            <textarea
+v-model="form.message" rows="4" required placeholder="Escribe tu mensaje..."
+                                class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"/>
                         </div>
-                        <button type="submit"
+                        <button
+type="submit"
                             class="w-full bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 transition">
                             Enviar mensaje
                         </button>
@@ -54,15 +58,16 @@
                             <span class="text-red-600">📍</span> Nuestra Ubicación
                         </h3>
                         <p class="text-gray-700 leading-relaxed">
-                            Clínica Kroma <br />
-                            Av. Lambramani #175 <br />
+                            Clínica Kroma <br >
+                            Av. Lambramani #175 <br >
                             Arequipa, Arequipa - Perú
                         </p>
                         <div class="mt-6 space-y-2 text-gray-600">
                             <p>📞 +51 999 999 999</p>
                             <p>🕐 Lun - Sáb : 9:00 AM - 7:00 PM</p>
                         </div>
-                        <a v-if="contactoSection?.mapLink" :href="contactoSection.mapLink" target="_blank"
+                        <a
+ v-if="contact.mapLink" :href="contact.mapLink" target="_blank"
                             class="inline-block mt-6 bg-red-600 text-white px-6 py-3 rounded-full hover:bg-red-700 transition">
                             Cómo llegar
                         </a>
@@ -70,9 +75,10 @@
                 </div>
 
                 <div class="rounded-2xl overflow-hidden shadow-lg">
-                    <iframe v-if="contactoSection?.mapUrl" :src="contactoSection.mapUrl" width="100%" height="420"
+                    <iframe
+ v-if="contact.mapUrl" :src="contact.mapUrl" width="100%" height="420"
                         style="border: 0" allowfullscreen loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        referrerpolicy="no-referrer-when-downgrade"/>
                 </div>
             </div>
         </section>
@@ -82,28 +88,24 @@
 <script setup>
 import { reactive } from "vue";
 
-// 1. Config logic
-const navItems = useAppConfig().navbar;
+// 1. Config
+const appConfig = useAppConfig();
+const navItems = appConfig.navbar;
 const nosotrosSection = navItems.find((item) => item.label === "nosotros");
-
-// 2. Section Data
 const contactoSection = nosotrosSection?.items?.find((item) => item.label === "contacto") ?? {
     label: "contacto",
 };
+const contact = appConfig.contact;
 
-const ubicacionSection = nosotrosSection?.items?.find((item) => item.label === "ubicacion") ?? {
-    label: "ubicacion",
-};
-
-// 3. Form logic
+// 2. Form logic
 const form = reactive({
     email: "",
     message: "",
 });
 
 const submitForm = () => {
-    const to = contactoSection.email_to ?? "contacto@kroma.pe";
-    const from = contactoSection.email_from ?? form.email;
+    const to = contact.emailTo || form.email;
+    const from = contact.emailFrom || form.email;
 
     window.location.href = `mailto:${to}?subject=Contacto Kroma&body=${encodeURIComponent(
         `De: ${from}\n\nMensaje:\n${form.message}`,

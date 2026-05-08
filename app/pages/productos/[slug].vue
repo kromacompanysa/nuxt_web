@@ -3,13 +3,15 @@
         <div class="grid lg:grid-cols-2 gap-16 items-start">
             <section class="space-y-4">
                 <div class="overflow-hidden rounded-2xl bg-gray-50 shadow-inner border border-gray-100">
-                    <img :src="product?.image" :alt="product?.label"
-                        class="w-full h-[500px] object-cover hover:scale-105 transition-transform duration-700" />
+                    <img
+:src="product?.image" :alt="product?.label"
+                        class="w-full h-[500px] object-cover hover:scale-105 transition-transform duration-700" >
                 </div>
                 <div class="grid grid-cols-4 gap-4">
-                    <div v-for="i in 4" :key="i"
+                    <div
+v-for="i in 4" :key="i"
                         class="h-24 bg-gray-100 rounded-lg border cursor-pointer hover:border-red-500 transition-colors overflow-hidden">
-                        <img :src="product?.image" class="w-full h-full object-cover opacity-50 hover:opacity-100" />
+                        <img :src="product?.image" class="w-full h-full object-cover opacity-50 hover:opacity-100" >
                     </div>
                 </div>
             </section>
@@ -49,14 +51,15 @@
 
                         <button
                             class="grow flex items-center justify-center gap-3 bg-red-600 text-white py-4 rounded-xl font-bold hover:bg-red-700 transition-all shadow-lg active:scale-95">
-                            <img src="/icons/cart4.svg" class="w-5 h-5 brightness-0 invert" />
+                            <img src="/icons/cart4.svg" class="w-5 h-5 brightness-0 invert" >
                             Agregar al Carrito
                         </button>
                     </div>
 
-                    <NuxtLink to="/nosotros/contacto"
+                    <NuxtLink
+to="/nosotros/contacto"
                         class="flex items-center justify-center gap-2 text-gray-500 hover:text-gray-900 transition-colors text-sm py-2">
-                        <img src="/icons/info.svg" class="w-4 h-4 opacity-50" />
+                        <img src="/icons/info.svg" class="w-4 h-4 opacity-50" >
                         ¿Tienes dudas sobre este producto? Contáctanos
                     </NuxtLink>
                 </div>

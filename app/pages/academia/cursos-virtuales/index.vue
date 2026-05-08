@@ -1,6 +1,6 @@
 <template>
   <div>
-    <DefaultItemListSection :ListSection="listSection" :ItemList="itemList" />
+    <DefaultItemListSection :list-section="listSection" :item-list="itemList" />
   </div>
 </template>
 

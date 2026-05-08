@@ -9,7 +9,7 @@
                         target="_blank"
                         class="hover:opacity-70 transition"
                     >
-                        <img src="/icons/facebook.svg" class="w-5 h-5" />
+                        <img src="/icons/facebook.svg" class="w-5 h-5" >
                     </a>
                 </li>
                 <li>
@@ -18,7 +18,7 @@
                         target="_blank"
                         class="hover:opacity-70 transition"
                     >
-                        <img src="/icons/instagram.svg" class="w-5 h-5" />
+                        <img src="/icons/instagram.svg" class="w-5 h-5" >
                     </a>
                 </li>
             </ul>

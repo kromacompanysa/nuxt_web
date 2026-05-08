@@ -1,4 +1,5 @@
 <template>
+    <div>
     <!-- Heading -->
     <h1 class="text-4xl font-bold text-center pt-5 capitalize">
         {{ historiaSection?.label ?? "x" }}
@@ -42,7 +43,7 @@
                         allow="autoplay; fullscreen; picture-in-picture"
                         allowfullscreen
                         class="w-full h-64 md:h-80 lg:h-96 rounded-2xl object-cover"
-                    ></iframe>
+                    />
                 </div>
             </div>
         </div>
@@ -64,7 +65,7 @@
                         allow="autoplay; fullscreen; picture-in-picture"
                         allowfullscreen
                         class="w-full h-64 md:h-80 lg:h-96 rounded-2xl object-cover"
-                    ></iframe>
+                    />
                 </div>
 
                 <!-- Text second on desktop -->
@@ -98,6 +99,7 @@
 
     <!-- Base Grid Component -->
     <DefaultSwiperGallery />
+    </div>
 </template>
 
 <script setup>

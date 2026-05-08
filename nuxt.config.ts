@@ -33,6 +33,8 @@ export default defineNuxtConfig({
 
   compatibilityDate: "2025-07-15",
 
+  modules: ["@nuxt/eslint"],
+
   devtools: { enabled: true },
 
   css: ["./app/assets/css/main.css"],
@@ -41,8 +43,6 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()],
     optimizeDeps: {
       include: [
-        "@vue/devtools-core",
-        "@vue/devtools-kit",
         "swiper/vue",
         "swiper/modules",
       ],

@@ -38,11 +38,11 @@
               :src="course.image"
               :alt="course.label"
               class="object-cover w-full h-full transition-transform duration-700 transform scale-105 group-hover:scale-110"
-            />
+            >
 
             <div
               class="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent opacity-90 group-hover:opacity-95"
-            ></div>
+            />
 
             <span
               class="absolute bottom-6 left-1/2 py-4 px-10 text-base font-semibold text-center text-white bg-red-600 rounded-full shadow-md transition duration-300 transform -translate-x-1/2 hover:bg-red-700 hover:shadow-lg hover:scale-105 capitalize"
@@ -52,7 +52,7 @@
           </NuxtLink>
         </SwiperSlide>
 
-        <div class="swiper-pagination mt-10"></div>
+        <div class="swiper-pagination mt-10"/>
       </Swiper>
     </div>
   </section>

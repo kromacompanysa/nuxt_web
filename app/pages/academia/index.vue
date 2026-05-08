@@ -22,7 +22,7 @@
                 <img
                     :src="item.image ?? '/images/pre_post_01.jpg'"
                     class="w-full h-80 object-cover transition-transform duration-500 hover:scale-105"
-                />
+                >
             </div>
 
             <!-- Content -->

@@ -9,7 +9,7 @@
                     src="/images/kroma_png_black.png"
                     alt="Kroma Logo"
                     class="h-7 sm:h-8 w-auto"
-                />
+                >
             </a>
 
             <!-- DESKTOP BUTTONS -->

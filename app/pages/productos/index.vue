@@ -10,11 +10,13 @@
         </header>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <article v-for="product in products" :key="product.id"
+            <article
+v-for="product in products" :key="product.id"
                 class="group flex flex-col bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300">
                 <div class="relative overflow-hidden h-64 bg-gray-100">
-                    <img :src="product.image" :alt="product.label"
-                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <img
+:src="product.image" :alt="product.label"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" >
                     <span
                         class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-gray-700 shadow-sm">
                         {{ product.category }}
@@ -39,10 +41,12 @@
                         </div>
 
                         <div class="flex items-center gap-2">
-                            <NuxtLink :to="product.href"
+                            <NuxtLink
+:to="product.href"
                                 class="group flex items-center gap-0 hover:gap-2 bg-gray-100 text-gray-600 p-2 hover:px-3 rounded-lg transition-all duration-300 ease-in-out overflow-hidden">
-                                <img src="/icons/info.svg" class="w-5 h-5 opacity-70 group-hover:opacity-100"
-                                    alt="info" />
+                                <img
+src="/icons/info.svg" class="w-5 h-5 opacity-70 group-hover:opacity-100"
+                                    alt="info" >
                                 <span
                                     class="max-w-0 group-hover:max-w-[100px] opacity-0 group-hover:opacity-100 text-xs font-medium transition-all duration-300 whitespace-nowrap">
                                     Detalles
@@ -51,7 +55,7 @@
 
                             <button
                                 class="group flex items-center gap-0 hover:gap-2 bg-red-600 text-white p-2 hover:px-3 rounded-lg transition-all duration-300 ease-in-out overflow-hidden shadow-sm">
-                                <img src="/icons/cart4.svg" class="w-5 h-5 brightness-0 invert" alt="cart" />
+                                <img src="/icons/cart4.svg" class="w-5 h-5 brightness-0 invert" alt="cart" >
                                 <span
                                     class="max-w-0 group-hover:max-w-[120px] opacity-0 group-hover:opacity-100 text-xs font-medium transition-all duration-300 whitespace-nowrap">
                                     Agregar

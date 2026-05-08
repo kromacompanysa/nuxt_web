@@ -12,7 +12,7 @@
           src="/images/kroma_png_black.png"
           alt="Kroma Logo"
           class="w-28 h-auto transition-transform duration-300 sm:w-36 md:w-40 group-hover:scale-105"
-        />
+        >
       </a>
 
       <!-- DESKTOP NAV -->
@@ -93,7 +93,7 @@
               src="/icons/cart4.svg"
               class="w-5 h-5"
               alt="Cart"
-            />
+            >
 
             <span
               class="absolute -top-2 -right-4 px-1.5 py-0.5 text-xs bg-red-600 text-white rounded-full"
@@ -107,9 +107,9 @@
       <!-- MOBILE MENU BUTTON -->
       <button
         class="flex items-center text-gray-700 md:hidden focus:outline-none"
-        @click="open = !open"
         aria-label="Toggle menu"
         :aria-expanded="open ? 'true' : 'false'"
+        @click="open = !open"
       >
         <svg
           class="w-7 h-7"
@@ -190,7 +190,7 @@
             <img
               src="/icons/cart4.svg"
               class="w-5 h-5"
-            />
+            >
             <span>Carrito</span>
 
             <span class="ml-auto py-0.5 px-1.5 bg-red-600 text-white rounded-full text-[10px]">

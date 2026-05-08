@@ -46,7 +46,7 @@
             src="/icons/award.svg"
             alt="Award Icon"
             class="w-12 h-12 mx-auto text-gray-500"
-          />
+          >
           <h3 class="mt-4 text-xl font-semibold">Curso Certificado</h3>
           <p class="mt-2 text-gray-600">
             Continúa tu formación odontológica con el Curso de Fotografía Dental
@@ -59,7 +59,7 @@
             src="/icons/camera.svg"
             alt="Camera Icon"
             class="w-12 h-12 mx-auto text-gray-500"
-          />
+          >
           <h3 class="mt-4 text-xl font-semibold">
             No se necesita conocimiento previo
           </h3>
@@ -74,7 +74,7 @@
             src="/icons/mobile.svg"
             alt="Mobile Icon"
             class="w-12 h-12 mx-auto text-gray-500"
-          />
+          >
           <h3 class="mt-4 text-xl font-semibold">
             Accesible desde cualquier dispositivo
           </h3>
@@ -93,14 +93,14 @@
       style="background-image: url(/images/hero_0.jpeg)"
     >
       <button
-        @click="openVideo"
         class="flex items-center justify-center bg-white/80 backdrop-blur-md rounded-full shadow-lg hover:bg-white w-16 h-16 md:w-20 md:h-20 transition-all duration-300"
+        @click="openVideo"
       >
         <img
           src="/icons/play.svg"
           alt="Play Icon"
           class="w-6 h-6 md:w-8 md:h-8"
-        />
+        >
       </button>
 
       <!-- VIDEO MODAL -->
@@ -114,7 +114,7 @@
             src="https://www.youtube.com/embed/X5scq_ZG6lk?start=250"
             allow="autoplay; encrypted-media"
             allowfullscreen
-          ></iframe>
+          />
 
           <button
             class="mt-4 px-6 py-2 bg-white text-gray-800 font-medium rounded"
@@ -144,7 +144,7 @@
           </p>
         </div>
 
-        <img src="/images/hero_0.jpeg" class="rounded-lg shadow-xl" />
+        <img src="/images/hero_0.jpeg" class="rounded-lg shadow-xl" >
       </div>
     </section>
 
@@ -172,11 +172,11 @@
               src="/icons/play.svg"
               alt="Play Icon"
               class="w-6 h-6 md:w-8 md:h-8"
-            />
+            >
           </button>
           <div class="absolute bottom-10 text-center text-white">
             <h3 class="text-5xl font-light">
-              CAPÍTULO 1<br />Fundamentos de la Fotografía
+              CAPÍTULO 1<br >Fundamentos de la Fotografía
             </h3>
           </div>
         </div>
@@ -191,11 +191,11 @@
               src="/icons/play.svg"
               alt="Play Icon"
               class="w-6 h-6 md:w-8 md:h-8"
-            />
+            >
           </button>
           <div class="absolute bottom-10 text-white text-center">
             <h3 class="text-5xl font-light">
-              CAPÍTULO 2<br />Equipamiento Intro
+              CAPÍTULO 2<br >Equipamiento Intro
             </h3>
           </div>
         </div>
@@ -210,10 +210,10 @@
               src="/icons/play.svg"
               alt="Play Icon"
               class="w-6 h-6 md:w-8 md:h-8"
-            />
+            >
           </button>
           <div class="absolute bottom-10 text-white text-center">
-            <h3 class="text-5xl font-light">CAPÍTULO 3<br />Final</h3>
+            <h3 class="text-5xl font-light">CAPÍTULO 3<br >Final</h3>
           </div>
         </div>
       </div>

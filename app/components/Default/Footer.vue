@@ -4,16 +4,18 @@
             <!-- Social Icons -->
             <ul class="flex justify-center mb-3 space-x-5">
                 <li>
-                    <a href="https://facebook.com" target="_blank" aria-label="Facebook"
+                    <a
+href="https://facebook.com" target="_blank" aria-label="Facebook"
                         class="transition hover:opacity-80">
-                        <img src="/icons/facebook.svg" alt="Facebook" class="w-6 h-6 invert brightness-0" />
+                        <img src="/icons/facebook.svg" alt="Facebook" class="w-6 h-6 invert brightness-0" >
                     </a>
                 </li>
 
                 <li>
-                    <a href="https://instagram.com" target="_blank" aria-label="Instagram"
+                    <a
+href="https://instagram.com" target="_blank" aria-label="Instagram"
                         class="transition hover:opacity-80">
-                        <img src="/icons/instagram.svg" alt="Instagram" class="w-6 h-6 invert brightness-0" />
+                        <img src="/icons/instagram.svg" alt="Instagram" class="w-6 h-6 invert brightness-0" >
                     </a>
                 </li>
             </ul>
