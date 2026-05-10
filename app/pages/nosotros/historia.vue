@@ -1,118 +1,60 @@
 <template>
-    <div>
-    <!-- Heading -->
-    <h1 class="text-4xl font-bold text-center pt-5 capitalize">
-        {{ historiaSection?.label ?? "x" }}
-    </h1>
+  <div class="max-w-6xl mx-auto px-6 py-12">
+    <header class="text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
+        {{ historia.content.title }}
+      </h1>
+      <p class="text-lg text-gray-500">{{ historia.content.subtitle }}</p>
+    </header>
 
-    <!-- Section 1 -->
-    <section
-        class="relative flex items-center justify-center bg-white py-3 md:py-5"
-    >
-        <div class="relative z-10 w-full max-w-6xl px-6 mx-auto">
-            <div class="grid md:grid-cols-2 gap-10 items-center">
-                <!-- Text -->
-                <div class="space-y-6 text-gray-700 text-justify order-1">
-                    <p class="text-sm leading-relaxed md:text-md">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Vivamus laoreet ex nec lorem posuere, at ultricies augue
-                        dapibus. Suspendisse potenti. Donec bibendum, ligula ac
-                        mattis elementum, erat purus fermentum est, vel faucibus
-                        sapien justo ac neque.
-                    </p>
-                    <p class="text-sm leading-relaxed md:text-md">
-                        Curabitur euismod, magna a fringilla commodo, nulla
-                        metus tincidunt lacus, nec facilisis arcu justo ut urna.
-                        Praesent vulputate, felis et laoreet gravida, lectus
-                        eros volutpat enim, vitae faucibus tortor augue nec
-                        neque.
-                    </p>
-                    <p class="text-sm leading-relaxed md:text-md">
-                        Aenean id justo nec lorem malesuada fermentum. Nam
-                        volutpat sem vitae lacus cursus, at efficitur elit
-                        egestas. Nulla facilisi. Aliquam erat volutpat. Integer
-                        et sapien a elit imperdiet convallis.
-                    </p>
-                </div>
-
-                <!-- Video -->
-                <div class="flex justify-center md:justify-end order-2">
-                    <iframe
-                        src="https://player.vimeo.com/video/322795741"
-                        frameborder="0"
-                        allow="autoplay; fullscreen; picture-in-picture"
-                        allowfullscreen
-                        class="w-full h-64 md:h-80 lg:h-96 rounded-2xl object-cover"
-                    />
-                </div>
+    <div class="space-y-16">
+      <section
+        v-for="(section, index) in historia.content.sections"
+        :key="index"
+        class="relative"
+      >
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div
+            :class="index % 2 === 0 ? '' : 'md:order-1'"
+          >
+            <div class="relative">
+              <div
+                class="absolute -top-4 -left-4 w-20 h-20 bg-red-50 rounded-full -z-10"
+              />
+              <h2 class="text-2xl font-semibold text-gray-900 mb-4 relative">
+                {{ section.heading }}
+              </h2>
             </div>
-        </div>
-    </section>
+            <p class="text-gray-600 leading-relaxed text-lg">
+              {{ section.body }}
+            </p>
+          </div>
 
-    <!-- Section 2 (Reversed layout) -->
-    <section
-        class="relative flex items-center justify-center bg-white py-3 md:py-10"
-    >
-        <div class="relative z-10 w-full max-w-6xl px-6 mx-auto">
-            <div class="grid md:grid-cols-2 gap-10 items-center">
-                <!-- Video first on desktop -->
-                <div
-                    class="flex justify-center md:justify-start order-2 md:order-1"
-                >
-                    <iframe
-                        src="https://player.vimeo.com/video/322795741"
-                        frameborder="0"
-                        allow="autoplay; fullscreen; picture-in-picture"
-                        allowfullscreen
-                        class="w-full h-64 md:h-80 lg:h-96 rounded-2xl object-cover"
-                    />
-                </div>
-
-                <!-- Text second on desktop -->
-                <div
-                    class="space-y-6 text-gray-700 text-justify order-1 md:order-2"
-                >
-                    <p class="text-sm leading-relaxed md:text-md">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Vivamus laoreet ex nec lorem posuere, at ultricies augue
-                        dapibus. Suspendisse potenti. Donec bibendum, ligula ac
-                        mattis elementum, erat purus fermentum est, vel faucibus
-                        sapien justo ac neque.
-                    </p>
-                    <p class="text-sm leading-relaxed md:text-md">
-                        Curabitur euismod, magna a fringilla commodo, nulla
-                        metus tincidunt lacus, nec facilisis arcu justo ut urna.
-                        Praesent vulputate, felis et laoreet gravida, lectus
-                        eros volutpat enim, vitae faucibus tortor augue nec
-                        neque.
-                    </p>
-                    <p class="text-sm leading-relaxed md:text-md">
-                        Aenean id justo nec lorem malesuada fermentum. Nam
-                        volutpat sem vitae lacus cursus, at efficitur elit
-                        egestas. Nulla facilisi. Aliquam erat volutpat. Integer
-                        et sapien a elit imperdiet convallis.
-                    </p>
-                </div>
+          <div
+            :class="index % 2 === 0 ? 'md:order-1' : ''"
+          >
+            <div
+              class="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg bg-gray-100"
+            >
+              <img
+                :src="historia.image"
+                :alt="section.heading"
+                class="w-full h-full object-cover"
+              >
             </div>
+          </div>
         </div>
-    </section>
-
-    <!-- Base Grid Component -->
-    <DefaultSwiperGallery />
+      </section>
     </div>
+
+    <DefaultSwiperGallery />
+  </div>
 </template>
 
 <script setup>
-// Load navigation items from app.config.ts
 const navItems = useAppConfig().navbar;
-
-// 1️⃣ Get "nosotros" section
 const nosotrosSection = navItems.find((item) => item.label === "nosotros");
-
-// 2️⃣ Get "historia" item
-const historiaSection = nosotrosSection?.items?.find(
-    (item) => item.label === "historia",
-) ?? {
-    label: "historia",
-};
+const historia = nosotrosSection?.items?.find(
+  (item) => item.label === "historia",
+) ?? { label: "historia", image: "/images/pre_post_01.jpg" };
 </script>

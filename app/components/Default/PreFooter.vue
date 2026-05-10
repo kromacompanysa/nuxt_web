@@ -87,7 +87,7 @@
                       </div>
 
                       <ul class="space-y-3">
-                        <template v-for="(item, idx) in group.items.slice(0, expandedGroups[group.label] ? undefined : 2)" :key="item.label">
+                        <template v-for="item in group.items.slice(0, expandedGroups[group.label] ? undefined : 2)" :key="item.label">
                           <li>
                             <a :href="item.href"
                               class="text-sm text-gray-600 hover:text-red-600 flex items-center transition-all duration-300 group/item">
