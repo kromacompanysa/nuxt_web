@@ -3,7 +3,7 @@
   <section class="relative py-24 overflow-hidden bg-gray-50 text-gray-900 border-t border-gray-200">
     <!-- Background Decoration -->
     <div
-      class="absolute top-0 right-0 w-1/3 h-1/2 bg-red-600/[0.03] blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
+      class="absolute top-0 right-0 w-1/3 h-1/2 bg-red-600/3 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
     <div
       class="absolute bottom-0 left-0 w-1/4 h-1/3 bg-gray-200/50 blur-[100px] rounded-full translate-y-1/2 -translate-x-1/2" />
 
@@ -75,29 +75,37 @@
                 <!-- Sub-items Grid -->
                 <div
                   :class="['grid gap-8 relative z-10', nav.label === 'consultorio' ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1']">
-                  <div v-for="group in nav.items" :key="group.label" class="space-y-4">
-                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest border-b border-gray-100 pb-2">
-                      {{ group.label }}
-                    </h4>
-
-                    <ul class="space-y-3">
-                      <li v-for="item in group.items" :key="item.label">
-                        <a :href="item.href"
-                          class="text-sm text-gray-600 hover:text-red-600 flex items-center transition-all duration-300 group/item">
-                          <span
-                            class="w-1.5 h-px bg-gray-300 mr-3 transition-all group-hover/item:w-4 group-hover/item:bg-red-500" />
-                          {{ item.label }}
-                        </a>
-                      </li>
-                      <li v-if="group.type === 'link'">
-                        <a :href="group.href"
-                          class="text-sm text-gray-600 hover:text-red-600 flex items-center transition-all duration-300 group/item">
-                          <span class="w-1.5 h-px bg-gray-300 mr-3 transition-all group-hover/item:w-4" />
+<div v-for="group in nav.items" :key="group.label" class="space-y-4">
+                      <div class="flex items-center justify-between border-b border-gray-100 pb-2">
+                        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest">
                           {{ group.label }}
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
+                        </h4>
+                        <button v-if="group.items.length > 2" @click="expandedGroups[group.label] = !expandedGroups[group.label]"
+                          class="text-xs font-bold text-red-600 hover:text-red-700 transition-colors px-2 py-0.5 rounded-full bg-red-50 hover:bg-red-100">
+                          {{ expandedGroups[group.label] ? '−' : '+' }}
+                        </button>
+                      </div>
+
+                      <ul class="space-y-3">
+                        <template v-for="(item, idx) in group.items.slice(0, expandedGroups[group.label] ? undefined : 2)" :key="item.label">
+                          <li>
+                            <a :href="item.href"
+                              class="text-sm text-gray-600 hover:text-red-600 flex items-center transition-all duration-300 group/item">
+                              <span
+                                class="w-1.5 h-px bg-gray-300 mr-3 transition-all group-hover/item:w-4 group-hover/item:bg-red-500" />
+                              {{ item.label }}
+                            </a>
+                          </li>
+                        </template>
+                        <li v-if="group.type === 'link'">
+                          <a :href="group.href"
+                            class="text-sm text-gray-600 hover:text-red-600 flex items-center transition-all duration-300 group/item">
+                            <span class="w-1.5 h-px bg-gray-300 mr-3 transition-all group-hover/item:w-4" />
+                            {{ group.label }}
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
                 </div>
 
                 <!-- Decorative Subtle Texture -->
@@ -115,4 +123,5 @@
 
 <script setup>
 const config = useAppConfig();
+const expandedGroups = ref({});
 </script>
