@@ -285,7 +285,6 @@ export default defineAppConfig({
     "/images/pre_post_01.jpg",
     "/images/pre_post_01.jpg",
   ],
-
   contact: {
     whatsappPhone: "51980102233",
     whatsappMessage: "Hola, quiero información sobre sus servicios 👋",

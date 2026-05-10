@@ -1,0 +1,73 @@
+@theme {
+  /* ========================================
+     🎨 Kroma Design System — Light Theme
+     All colors used in the application
+     ======================================== */
+
+  /* -------- Brand (Red) -------- */
+  --color-brand-50: #fef2f2;
+  --color-brand-100: #fee2e2;
+  --color-brand-200: #fecaca;
+  --color-brand-500: #ef4444;
+  --color-brand-600: #dc2626;
+  --color-brand-700: #b91c1c;
+  --color-brand-900: #7f1d1d;
+
+  /* -------- Surfaces -------- */
+  --color-surface: #ffffff;
+  --color-surface-subtle: #f9fafb;
+  --color-surface-hover: #f3f4f6;
+  --color-surface-footer: #030712;
+  --color-surface-dark: #1f2937;
+  --color-surface-overlay: rgba(0, 0, 0, 0.8);
+
+  /* -------- Text -------- */
+  --color-text-primary: #111827;
+  --color-text-secondary: #4b5563;
+  --color-text-body: #374151;
+  --color-text-muted: #9ca3af;
+  --color-text-on-brand: #ffffff;
+  --color-text-on-dark: #ffffff;
+  --color-text-on-light: #111827;
+
+  /* -------- Borders -------- */
+  --color-border-light: #e5e7eb;
+  --color-border-muted: #f3f4f6;
+  --color-border-strong: #d1d5db;
+  --color-border-brand: #fecaca;
+
+  /* -------- Input / Form -------- */
+  --color-input-bg: #ffffff;
+  --color-input-border: #d1d5db;
+  --color-input-ring: #ef4444;
+
+  /* -------- Buttons -------- */
+  --color-btn-primary-bg: #dc2626;
+  --color-btn-primary-hover: #b91c1c;
+  --color-btn-primary-text: #ffffff;
+
+  /* -------- Gradients (extracted from app) -------- */
+
+  /* Hero overlay: from-white/70 via-white/60 to-white/40 */
+  --gradient-hero-overlay: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.4)
+  );
+
+  /* Card overlay: from-black/70 via-black/30 to-transparent */
+  --gradient-card-overlay: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.3),
+    transparent
+  );
+
+  /* Brand gradient text: from-red-600 to-gray-600 */
+  --gradient-brand-text: linear-gradient(
+    to right,
+    #dc2626,
+    #4b5563
+  );
+}

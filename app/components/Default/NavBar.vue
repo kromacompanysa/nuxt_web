@@ -138,7 +138,7 @@
           <a
             v-if="item.type === 'link'"
             :href="item.href"
-            class="block py-2 px-4 rounded-md transition hover:text-blue-600 hover:bg-gray-100"
+            class="block py-2 px-4 rounded-md transition hover:text-red-600 hover:bg-gray-100"
           >
             {{ item.label }}
           </a>
@@ -149,7 +149,7 @@
             class="pt-2 border-t border-gray-200 group"
           >
             <summary
-              class="flex justify-between items-center py-2 px-4 rounded-md transition cursor-pointer hover:text-blue-600 hover:bg-gray-100"
+              class="flex justify-between items-center py-2 px-4 rounded-md transition cursor-pointer hover:text-red-600 hover:bg-gray-100"
             >
               {{ item.label }}
 
@@ -173,7 +173,7 @@
               >
                 <a
                   :href="sub.href"
-                  class="block py-1 px-2 rounded transition hover:text-blue-600 hover:bg-gray-100 capitalize"
+                  class="block py-1 px-2 rounded transition hover:text-red-600 hover:bg-gray-100 capitalize"
                 >
                   {{ sub.label }}
                 </a>
@@ -185,7 +185,7 @@
           <a
             v-else-if="item.type === 'cart'"
             :href="item.href"
-            class="flex gap-2 items-center py-2 px-4 rounded-md transition hover:text-blue-600 hover:bg-gray-100"
+            class="flex gap-2 items-center py-2 px-4 rounded-md transition hover:text-red-600 hover:bg-gray-100"
           >
             <img
               src="/icons/cart4.svg"

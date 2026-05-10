@@ -19,7 +19,7 @@
         <div class="mt-8 flex gap-4 justify-center">
           <a
             href="#"
-            class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-full"
+            class="bg-red-600 hover:bg-red-700 text-white font-medium px-6 py-3 rounded-full transition"
           >
             Accede Ahora
           </a>
