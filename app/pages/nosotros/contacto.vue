@@ -2,39 +2,56 @@
   <div class="space-y-10">
     <section class="max-w-6xl mx-auto px-6">
       <h1 class="text-4xl font-bold text-center py-5 capitalize">
-        {{ contactoSection?.content?.title ?? "Contacto" }}
+        {{ contacto.content.title }}
       </h1>
 
       <div class="grid md:grid-cols-2 gap-12 items-start">
         <div class="space-y-6">
           <div class="bg-white shadow-lg rounded-2xl p-8">
             <h3 class="text-2xl font-semibold mb-4 flex items-center gap-2">
-              <span class="text-red-600">✉️</span> Contáctanos
+              <img src="/icons/envelope.svg" class="w-5 h-5 text-red-600" alt="Email">
+              Contáctanos
             </h3>
             <p class="text-gray-700 leading-relaxed">
-              {{ contactoSection?.content?.clinicName }}
+              {{ contacto.content.clinicName }}
             </p>
             <div class="mt-6 space-y-3 text-gray-600">
               <a
-                :href="`tel:+${contact.whatsappPhone}`"
+                :href="`tel:+${contacto.content.whatsappPhone}`"
                 class="flex items-center gap-2 hover:text-red-600 transition"
               >
-                📞 +{{ contact.whatsappPhone.replace(/^52/, "51 ") }}
+                <img src="/icons/headset.svg" class="w-4 h-4" alt="Teléfono">
+                +{{ contacto.content.whatsappPhone.replace(/^52/, "51 ") }}
               </a>
               <a
-                :href="`mailto:${contact.emailTo}`"
+                :href="`mailto:${contacto.content.emailTo}`"
                 class="flex items-center gap-2 hover:text-red-600 transition"
               >
-                ✉ {{ contact.emailTo }}
+                <img src="/icons/envelope.svg" class="w-4 h-4" alt="Email">
+                {{ contacto.content.emailTo }}
               </a>
-              <p>🕐 {{ contactoSection?.content?.schedule }}</p>
+              <p class="flex items-center gap-2">
+                <img src="/icons/clock.svg" class="w-4 h-4" alt="Horario">
+                {{ contacto.content.schedule }}
+              </p>
             </div>
-            <a
-              :href="`mailto:${contact.emailTo}`"
-              class="inline-block mt-6 bg-red-600 text-white px-6 py-3 rounded-full hover:bg-red-700 transition"
-            >
-              Enviar correo
-            </a>
+            <div class="flex flex-wrap gap-3 mt-6">
+              <a
+                :href="`mailto:${contacto.content.emailTo}`"
+                class="bg-red-600 text-white px-6 py-3 rounded-full hover:bg-red-700 transition flex items-center gap-2"
+              >
+                <img src="/icons/envelope.svg" class="w-3.5 h-3.5" alt="Email">
+                Enviar correo
+              </a>
+              <a
+                :href="whatsAppLink"
+                target="_blank"
+                class="bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition flex items-center gap-2"
+              >
+                <img src="/icons/whatsapp.svg" class="w-3.5 h-3.5" alt="WhatsApp">
+                WhatsApp
+              </a>
+            </div>
           </div>
         </div>
 
@@ -77,24 +94,29 @@
         <div class="space-y-6">
           <div class="bg-white shadow-lg rounded-2xl p-8">
             <h3 class="text-2xl font-semibold mb-4 flex items-center gap-2">
-              <span class="text-red-600">📍</span> Nuestra Ubicación
+              <img src="/icons/geo-alt.svg" class="w-5 h-5 text-red-600" alt="Ubicación">
+              Nuestra Ubicación
             </h3>
             <p class="text-gray-700 leading-relaxed">
-              {{ contactoSection?.content?.clinicName }}<br>
-              {{ contactoSection?.content?.address }}
+              {{ contacto.content.clinicName }}<br>
+              {{ contacto.content.address }}
             </p>
             <div class="mt-6 space-y-2 text-gray-600">
               <a
-                :href="`tel:+${contact.whatsappPhone}`"
+                :href="`tel:+${contacto.content.whatsappPhone}`"
                 class="flex items-center gap-2 hover:text-red-600 transition"
               >
-                📞 +{{ contact.whatsappPhone.replace(/^52/, "51 ") }}
+                <img src="/icons/headset.svg" class="w-4 h-4" alt="Teléfono">
+                +{{ contacto.content.whatsappPhone.replace(/^52/, "51 ") }}
               </a>
-              <p>🕐 {{ contactoSection?.content?.schedule }}</p>
+              <p class="flex items-center gap-2">
+                <img src="/icons/clock.svg" class="w-4 h-4" alt="Horario">
+                {{ contacto.content.schedule }}
+              </p>
             </div>
             <a
-              v-if="contact.mapLink"
-              :href="contact.mapLink"
+              v-if="contacto.content.mapLink"
+              :href="contacto.content.mapLink"
               target="_blank"
               class="inline-block mt-6 bg-red-600 text-white px-6 py-3 rounded-full hover:bg-red-700 transition"
             >
@@ -105,8 +127,8 @@
 
         <div class="rounded-2xl overflow-hidden shadow-lg">
           <iframe
-            v-if="contact.mapUrl"
-            :src="contact.mapUrl"
+            v-if="contacto.content.mapUrl"
+            :src="contacto.content.mapUrl"
             width="100%"
             height="420"
             style="border: 0"
@@ -121,15 +143,18 @@
 </template>
 
 <script setup>
-import { reactive } from "vue";
+import { reactive, computed } from "vue";
 
-const appConfig = useAppConfig();
-const navItems = appConfig.navbar;
+const navItems = useAppConfig().navbar;
 const nosotrosSection = navItems.find((item) => item.label === "nosotros");
-const contactoSection = nosotrosSection?.items?.find(
+const contacto = nosotrosSection?.items?.find(
   (item) => item.label === "contacto",
-) ?? { label: "contacto" };
-const contact = appConfig.contact;
+) ?? { label: "contacto", content: {} };
+
+const whatsAppLink = computed(
+  () =>
+    `https://wa.me/${contacto.content.whatsappPhone}?text=${encodeURIComponent(contacto.content.whatsappMessage)}`,
+);
 
 const form = reactive({
   email: "",
@@ -137,8 +162,8 @@ const form = reactive({
 });
 
 const submitForm = () => {
-  const to = contact.emailTo || form.email;
-  const from = contact.emailFrom || form.email;
+  const to = contacto.content.emailTo ?? form.email;
+  const from = contacto.content.emailFrom ?? form.email;
 
   window.location.href = `mailto:${to}?subject=Contacto Kroma&body=${encodeURIComponent(
     `De: ${from}\n\nMensaje:\n${form.message}`,

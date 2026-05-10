@@ -16,18 +16,23 @@
     <!-- Footer -->
     <DefaultFooter />
     <DefaultWhatsAppLink
-      :phone="appConfig.contact.whatsappPhone"
-      :message="appConfig.contact.whatsappMessage"
+      :phone="contacto.content.whatsappPhone"
+      :message="contacto.content.whatsappMessage"
       class="fixed bottom-6 right-6 z-50"
     />
   </div>
 </template>
 
 <script setup>
+import { computed } from "vue";
 import { useRoute } from "vue-router";
 
 const route = useRoute();
-const appConfig = useAppConfig();
+const navItems = useAppConfig().navbar;
+const nosotrosSection = navItems.find((item) => item.label === "nosotros");
+const contacto = nosotrosSection?.items?.find(
+  (item) => item.label === "contacto",
+) ?? { label: "contacto", content: {} };
 
 const showBreadcrumbs = computed(() => {
   return route.meta?.breadcrumbs !== false;

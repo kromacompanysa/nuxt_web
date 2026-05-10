@@ -14,14 +14,27 @@ export default defineNuxtConfig({
   app: {
     baseURL: "/",
     head: {
-      charset: 'utf-8',
-      viewport: 'width=device-width, initial-scale=1',
-      title: 'Dental Clinic - Kroma', // Good for SEO
+      charset: "utf-8",
+      viewport: "width=device-width, initial-scale=1",
+      title: "Kroma — Clínica Odontológica y Academia",
+      htmlAttrs: { lang: "es" },
+      meta: [
+        {
+          name: "description",
+          content:
+            "Kroma es una clínica odontológica integral en Arequipa con laboratorio propio y academia de formación continua para profesionales dentales.",
+        },
+        {
+          name: "keywords",
+          content:
+            "clínica dental, odontología, Arequipa, implantes, ortodoncia, cursos dentales, academia odontológica",
+        },
+      ],
       link: [
         {
           rel: "icon",
-          type: "image/jpeg", // Double check if it's .jpeg or .jpg or .png
-          href: "/favicon.jpeg",
+          type: "image/png",
+          href: "/favicon.png",
         },
       ],
     },
