@@ -62,6 +62,11 @@ export default defineAppConfig({
       label: "consultorio",
       type: "dropdown",
       href: "/consultorio",
+      social: {
+        whatsappPhone: "51980102233",
+        whatsappMessage: "Hola, quiero información sobre sus servicios 👋",
+        instagramUrl: "https://instagram.com/kromaperu",
+      },
       items: [
         {
           label: "especialidades",
@@ -145,6 +150,11 @@ export default defineAppConfig({
       label: "academia",
       type: "dropdown",
       href: "/academia",
+      social: {
+        whatsappPhone: "51980102233",
+        whatsappMessage: "Hola, quiero información sobre Kroma Academia 👋",
+        instagramUrl: "https://instagram.com/kromaperu",
+      },
       items: [
         {
           label: "especialidad",
@@ -266,6 +276,11 @@ export default defineAppConfig({
       label: "laboratorio",
       type: "dropdown",
       href: "/laboratorio",
+      social: {
+        whatsappPhone: "51980102233",
+        whatsappMessage: "Hola, quiero información sobre el laboratorio Kroma 👋",
+        instagramUrl: "https://instagram.com/kromaperu",
+      },
       items: [
         {
           label: "servicios",
