@@ -4,14 +4,13 @@
     <!-- Global Navigation -->
     <DefaultNavBar />
 
-    <!-- Page Content -->
-    <main class="flex-1 pt-20">
-      <div v-if="showBreadcrumbs" class="max-w-7xl mx-auto px-6 pt-3">
-        <DefaultBreadcrumbs />
-      </div>
-      <!-- pt-[90px] ensures the header does NOT overlap -->
-      <slot />
-    </main>
+      <!-- Page Content -->
+      <main class="flex-1 pt-20">
+        <div v-if="showBreadcrumbs" class="max-w-7xl mx-auto px-6 pt-3">
+          <DefaultBreadcrumbs />
+        </div>
+        <slot />
+      </main>
 
     <!-- Footer -->
     <DefaultFooter />
@@ -39,19 +38,3 @@ const showBreadcrumbs = computed(() => {
 });
 </script>
 
-<style scoped>
-/* Optional: smooth page transitions */
-main {
-  animation: fadeIn 0.4s ease;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-</style>

@@ -21,8 +21,8 @@
                     1024: { slidesPerView: 3, grid: { rows: 2 } },
                 }" class="mySwiperBoxes">
                 <SwiperSlide v-for="(img, i) in gallery" :key="i">
-                    <div class="overflow-hidden relative h-64">
-                        <img :src="img" alt="Caso de éxito Kroma" class="object-cover absolute inset-0 w-full h-full" >
+                    <div class="overflow-hidden relative h-64 group cursor-pointer">
+                        <img :src="img" alt="Caso de éxito Kroma" class="object-cover absolute inset-0 w-full h-full transition-transform duration-700 group-hover:scale-110" >
                     </div>
                 </SwiperSlide>
             </Swiper>
@@ -44,6 +44,10 @@ const gallery = appConfig.gallery;
 
 <style scoped>
 .mySwiperBoxes {
-    padding-bottom: 40px;
+  padding-bottom: 40px;
+}
+
+.mySwiperBoxes :deep(.swiper-slide) {
+  overflow: hidden;
 }
 </style>

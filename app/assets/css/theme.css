@@ -46,6 +46,10 @@
   --color-btn-primary-hover: #b91c1c;
   --color-btn-primary-text: #ffffff;
 
+  /* -------- Typography -------- */
+  --font-family-display: "Bitter", Georgia, serif;
+  --font-family-sans: "Manrope", system-ui, sans-serif;
+
   /* -------- Gradients (extracted from app) -------- */
 
   /* Hero overlay: from-white/70 via-white/60 to-white/40 */
@@ -70,4 +74,53 @@
     #dc2626,
     #4b5563
   );
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.anim-fade-slide-up {
+  opacity: 0;
+  animation: fadeSlideUp 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.anim-fade-in {
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.anim-scale-in {
+  opacity: 0;
+  animation: scaleIn 0.5s ease-out forwards;
 }

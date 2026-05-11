@@ -37,31 +37,36 @@
       class="relative z-10 max-w-4xl mx-auto px-6 pt-40 pb-28 text-center text-gray-900"
     >
       <h1
-        class="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight drop-shadow-sm"
+        class="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight drop-shadow-sm anim-fade-slide-up font-display"
+        style="animation-delay: 0ms"
       >
         Bienvenido a <span class="text-red-600">Kroma</span>
       </h1>
 
       <p
-        class="text-gray-700 text-lg md:text-2xl max-w-3xl mx-auto mt-6 leading-relaxed"
+        class="text-gray-700 text-lg md:text-2xl max-w-3xl mx-auto mt-6 leading-relaxed anim-fade-slide-up font-sans"
+        style="animation-delay: 180ms"
       >
         Clínica odontológica y academia especializada. Atención profesional,
         tecnología avanzada y formación de excelencia.
       </p>
 
       <div
-        class="flex flex-col sm:flex-row justify-center gap-5 pt-10 w-full mx-auto"
+        class="flex flex-col sm:flex-row justify-center gap-5 pt-10 w-full mx-auto anim-fade-slide-up"
+        style="animation-delay: 360ms"
       >
         <NuxtLink
           to="/nosotros/contacto"
-          class="px-8 py-4 text-lg bg-red-600 text-white rounded-xl shadow-lg hover:bg-red-700 hover:shadow-xl transition-all"
+          class="btn-primary anim-fade-slide-up"
+          style="animation-delay: 480ms"
         >
           Agenda tu cita
         </NuxtLink>
 
         <NuxtLink
           to="/nosotros/historia"
-          class="px-8 py-4 text-lg bg-gray-900 text-white rounded-xl shadow-lg hover:bg-gray-800 hover:shadow-xl transition-all"
+          class="btn-secondary anim-fade-slide-up"
+          style="animation-delay: 540ms"
         >
           Conócenos
         </NuxtLink>
@@ -127,8 +132,57 @@ const swiperModules = computed(() => {
 .heroBackgroundSwiper :deep(.swiper-button-prev),
 .heroBackgroundSwiper :deep(.swiper-button-next) {
   color: #1f2937;
-  /* gray-800 */
   width: 44px;
   height: 44px;
+}
+
+.font-display {
+  font-family: var(--font-family-display);
+}
+
+.font-sans {
+  font-family: var(--font-family-sans);
+}
+
+.btn-primary {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  background-color: var(--color-btn-primary-bg);
+  color: var(--color-btn-primary-text);
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-btn-primary-hover);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.btn-primary:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-secondary {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  background-color: var(--color-surface-dark);
+  color: var(--color-text-on-dark);
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #374151;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.btn-secondary:active {
+  transform: translateY(0) scale(0.98);
 }
 </style>

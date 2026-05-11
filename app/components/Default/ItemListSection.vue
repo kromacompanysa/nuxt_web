@@ -11,10 +11,10 @@
         :to="item.href"
         class="block group"
       >
-        <div class="overflow-hidden rounded-lg shadow-md">
+        <div class="overflow-hidden rounded-lg shadow-md transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1">
           <img
             :src="item.image ?? '/images/pre_post_01.jpg'"
-            class="w-full h-48 object-cover group-hover:scale-105 transition"
+            class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
           >
         </div>
 
