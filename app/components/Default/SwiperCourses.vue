@@ -29,10 +29,14 @@
           }"
           class="mySwiperHero hero-swiper"
         >
-          <SwiperSlide v-for="course in cursos" :key="course.label">
+          <SwiperSlide
+            v-for="course in cursos"
+            :key="course.label"
+            class="group"
+          >
             <NuxtLink
               :to="course.href"
-              class="block overflow-hidden relative w-full h-72 rounded-3xl shadow-md transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 group"
+              class="block overflow-hidden relative w-full h-72 rounded-3xl shadow-md transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
             >
               <img
                 :src="course.image"
@@ -41,11 +45,11 @@
               >
 
               <div
-                class="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-100"
+                class="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent opacity-70 group-[.swiper-slide-active]:opacity-90 transition-all duration-400 delay-100"
               />
 
               <span
-                class="absolute bottom-6 left-1/2 py-4 px-10 text-base font-semibold text-center text-white bg-red-600 rounded-full shadow-md transition-all duration-300 transform -translate-x-1/2 hover:bg-red-700 hover:shadow-lg hover:scale-105 active:scale-100 capitalize"
+                class="absolute bottom-6 left-1/2 py-4 px-10 text-base font-semibold text-center text-white bg-red-600 rounded-full shadow-md translate-y-2 opacity-70 group-[.swiper-slide-active]:translate-y-0 group-[.swiper-slide-active]:opacity-100 group-[.swiper-slide-active]:scale-105 transition-all duration-300 delay-200 hover:bg-red-700 hover:shadow-lg hover:scale-110 active:scale-100 capitalize -translate-x-1/2"
               >
                 {{ course.label }}
               </span>
