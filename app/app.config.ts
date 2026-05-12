@@ -78,51 +78,71 @@ export default defineAppConfig({
               label: "periodoncia",
               href: "/consultorio/especialidades/periodoncia",
               image: "/images/pre_post_01.jpg",
+              description: "Tratamientos para las encías y tejidos de soporte dental. Prevén y trata enfermedades periodontales como la gingivitis y periodontitis.",
+              ctaLink: "/consultorio/especialidades/periodoncia"
             },
             {
               label: "odontología restauradora",
               href: "/consultorio/especialidades/odontologia-restauradora",
               image: "/images/pre_post_01.jpg",
+              description: "Restauración de dientes dañados por caries o traumatismos. devolvemos la función y estética de tu sonrisa con materiales de alta calidad.",
+              ctaLink: "/consultorio/especialidades/odontologia-restauradora"
             },
             {
               label: "endodoncia",
               href: "/consultorio/especialidades/endodoncia",
               image: "/images/pre_post_01.jpg",
+              description: "Tratamiento de conductos radiculares para salvar dientes dañados. Eliminamos la infección y preservamos tu diente natural.",
+              ctaLink: "/consultorio/especialidades/endodoncia"
             },
             {
               label: "ortodoncia",
               href: "/consultorio/especialidades/ortodoncia",
               image: "/images/pre_post_01.jpg",
+              description: "Corrección de dientes desalineados y problemas de mordida. Implantes, brackets tradicionales o aligners transparentes.",
+              ctaLink: "/consultorio/especialidades/ortodoncia"
             },
             {
               label: "estética",
               href: "/consultorio/especialidades/estetica",
               image: "/images/pre_post_01.jpg",
+              description: "Mejora la apariencia de tu sonrisa con/blanqueamiento, carillas, coronas y diseños de sonrisa personalizados.",
+              ctaLink: "/consultorio/especialidades/estetica"
             },
             {
               label: "rehabilitación oral",
               href: "/consultorio/especialidades/rehabilitacion-oral",
               image: "/images/pre_post_01.jpg",
+              description: "Restauración completa de la función masticatoria y estética. Prótesis fijas y removibles adaptadas a tus necesidades.",
+              ctaLink: "/consultorio/especialidades/rehabilitacion-oral"
             },
             {
               label: "implantología",
               href: "/consultorio/especialidades/implantologia",
               image: "/images/pre_post_01.jpg",
+              description: "Colocación de implantes dentales para reemplazar dientes perdidos. Recuperar la funcionalidad y estética de tu sonrisa.",
+              ctaLink: "/consultorio/especialidades/implantologia"
             },
             {
               label: "cirugía",
               href: "/consultorio/especialidades/cirugia",
               image: "/images/pre_post_01.jpg",
+              description: "Procedimientos quirúrgicos bucales incluyendo extracciones, cirugías de terceros molares y frenillos.",
+              ctaLink: "/consultorio/especialidades/cirugia"
             },
             {
               label: "prótesis",
               href: "/consultorio/especialidades/protesis",
               image: "/images/pre_post_01.jpg",
+              description: "Prótesis dentales completas y parciales. Restauramos la función masticatoria y estética de tu sonrisa.",
+              ctaLink: "/consultorio/especialidades/protesis"
             },
             {
               label: "odontopediatría",
               href: "/consultorio/especialidades/odontopediatria",
               image: "/images/pre_post_01.jpg",
+              description: "Atención dental especializada para niños. Cuidamos la salud bucal de los más pequeños con un enfoque preventivo.",
+              ctaLink: "/consultorio/especialidades/odontopediatria"
             },
           ],
         },
