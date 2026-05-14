@@ -42,8 +42,11 @@
           </li>
         </ul>
 
-        <NuxtLink :to="item.href" class="inline-block mt-6 text-red-600 font-medium hover:underline">
-          Ver más →
+        <NuxtLink :to="item.href" class="inline-flex items-center gap-2 mt-6 px-5 py-2.5 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-full transition text-sm">
+          Ver más
+          <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" clip-rule="evenodd" />
+          </svg>
         </NuxtLink>
       </div>
     </article>

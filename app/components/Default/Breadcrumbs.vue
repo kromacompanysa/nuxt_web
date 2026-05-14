@@ -10,7 +10,7 @@
                 :key="crumb.to"
                 class="flex items-center gap-2"
             >
-                <span>&gt;</span>
+                <img src="/icons/right.svg" class="w-3 h-3" alt="">
 
                 <NuxtLink
                     v-if="index !== crumbs.length - 1"

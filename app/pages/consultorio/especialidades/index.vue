@@ -15,23 +15,27 @@
           <div :class="index % 2 === 0 ? '' : 'md:order-1'">
             <div class="relative">
               <div class="absolute -top-4 -left-4 w-20 h-20 bg-red-50 rounded-full -z-10" />
-              <h2 class="text-2xl font-semibold text-gray-900 mb-4 relative capitalize">
+              <h2 :class="['text-3xl font-medium capitalize', index % 2 === 0 ? 'text-right' : 'text-left']">
                 {{ item.label }}
               </h2>
             </div>
-            <p class="text-gray-600 leading-relaxed text-lg">
+            <p :class="['text-gray-600 leading-relaxed text-lg', index % 2 === 0 ? 'text-right' : 'text-left']">
               {{ item.description }}
             </p>
-            <NuxtLink :to="item.ctaLink"
-              class="inline-flex items-center gap-2 mt-4 px-5 py-2.5 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-full transition text-sm">
+            <NuxtLink :to="item.ctaLink" :class="[
+              'inline-flex items-center gap-2 mt-4 px-5 py-2.5 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-full transition text-sm',
+              index % 2 === 0 ? 'float-right' : ''
+            ]">
               Agenda tu cita
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" clip-rule="evenodd" />
               </svg>
             </NuxtLink>
+
+
           </div>
 
-          <div :class="index % 2 === 0 ? 'md:order-1' : ''">
+          <div>
             <div class="rounded-lg overflow-hidden shadow-md bg-gray-100">
               <img :src="item.image" :alt="item.label" class="w-full h-56 md:h-64 object-cover">
             </div>
