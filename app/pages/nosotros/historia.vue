@@ -8,19 +8,11 @@
     </header>
 
     <div class="space-y-16">
-      <section
-        v-for="(section, index) in historia.content.sections"
-        :key="index"
-        class="relative"
-      >
+      <section v-for="(section, index) in historia.content.sections" :key="index" class="relative">
         <div class="grid md:grid-cols-2 gap-12 items-center">
-          <div
-            :class="index % 2 === 0 ? '' : 'md:order-1'"
-          >
+          <div :class="index % 2 === 0 ? '' : 'md:order-1'">
             <div class="relative">
-              <div
-                class="absolute -top-4 -left-4 w-20 h-20 bg-red-50 rounded-full -z-10"
-              />
+              <div class="absolute -top-4 -left-4 w-20 h-20 bg-red-50 rounded-full -z-10" />
               <h2 class="text-2xl font-semibold text-gray-900 mb-4 relative">
                 {{ section.heading }}
               </h2>
@@ -30,24 +22,14 @@
             </p>
           </div>
 
-          <div
-            :class="index % 2 === 0 ? 'md:order-1' : ''"
-          >
-            <div
-              class="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg bg-gray-100"
-            >
-              <img
-                :src="historia.image"
-                :alt="section.heading"
-                class="w-full h-full object-cover"
-              >
+          <div :class="index % 2 === 0 ? 'md:order-1' : ''">
+            <div class="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg bg-gray-100">
+              <img :src="historia.image" :alt="section.heading" class="w-full h-full object-cover">
             </div>
           </div>
         </div>
       </section>
     </div>
-
-    <DefaultSwiperGallery />
   </div>
 </template>
 

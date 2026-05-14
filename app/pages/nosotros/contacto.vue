@@ -16,17 +16,13 @@
               {{ contacto.content.clinicName }}
             </p>
             <div class="mt-6 space-y-3 text-gray-600">
-              <a
-                :href="`tel:+${contacto.content.whatsappPhone}`"
-                class="flex items-center gap-2 hover:text-red-600 transition"
-              >
+              <a :href="`tel:+${contacto.content.whatsappPhone}`"
+                class="flex items-center gap-2 hover:text-red-600 transition">
                 <img src="/icons/headset.svg" class="w-4 h-4" alt="Teléfono">
                 +{{ contacto.content.whatsappPhone.replace(/^52/, "51 ") }}
               </a>
-              <a
-                :href="`mailto:${contacto.content.emailTo}`"
-                class="flex items-center gap-2 hover:text-red-600 transition"
-              >
+              <a :href="`mailto:${contacto.content.emailTo}`"
+                class="flex items-center gap-2 hover:text-red-600 transition">
                 <img src="/icons/envelope.svg" class="w-4 h-4" alt="Email">
                 {{ contacto.content.emailTo }}
               </a>
@@ -36,19 +32,12 @@
               </p>
             </div>
             <div class="flex flex-wrap gap-3 mt-6">
-              <a
-                :href="`mailto:${contacto.content.emailTo}`"
-                class="bg-red-600 text-white px-6 py-3 rounded-full hover:bg-red-700 transition flex items-center gap-2"
-              >
-                <img src="/icons/envelope.svg" class="w-3.5 h-3.5" alt="Email">
+              <a :href="`mailto:${contacto.content.emailTo}`"
+                class="bg-red-600 text-white px-6 py-3 rounded-full hover:bg-red-700 transition flex items-center gap-2">
                 Enviar correo
               </a>
-              <a
-                :href="whatsAppLink"
-                target="_blank"
-                class="bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition flex items-center gap-2"
-              >
-                <img src="/icons/whatsapp.svg" class="w-3.5 h-3.5" alt="WhatsApp">
+              <a :href="whatsAppLink" target="_blank"
+                class="bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition flex items-center gap-2">
                 WhatsApp
               </a>
             </div>
@@ -60,28 +49,15 @@
           <form class="space-y-4" @submit.prevent="submitForm">
             <div>
               <label class="block text-sm text-gray-600 mb-1">Tu correo</label>
-              <input
-                v-model="form.email"
-                type="email"
-                required
-                placeholder="tu@email.com"
-                class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
-              >
+              <input v-model="form.email" type="email" required placeholder="tu@email.com"
+                class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
             </div>
             <div>
               <label class="block text-sm text-gray-600 mb-1">Mensaje</label>
-              <textarea
-                v-model="form.message"
-                rows="4"
-                required
-                placeholder="Escribe tu mensaje..."
-                class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
-              />
+              <textarea v-model="form.message" rows="4" required placeholder="Escribe tu mensaje..."
+                class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" />
             </div>
-            <button
-              type="submit"
-              class="w-full bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 transition"
-            >
+            <button type="submit" class="w-full bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 transition">
               Enviar mensaje
             </button>
           </form>
@@ -102,10 +78,8 @@
               {{ contacto.content.address }}
             </p>
             <div class="mt-6 space-y-2 text-gray-600">
-              <a
-                :href="`tel:+${contacto.content.whatsappPhone}`"
-                class="flex items-center gap-2 hover:text-red-600 transition"
-              >
+              <a :href="`tel:+${contacto.content.whatsappPhone}`"
+                class="flex items-center gap-2 hover:text-red-600 transition">
                 <img src="/icons/headset.svg" class="w-4 h-4" alt="Teléfono">
                 +{{ contacto.content.whatsappPhone.replace(/^52/, "51 ") }}
               </a>
@@ -114,28 +88,16 @@
                 {{ contacto.content.schedule }}
               </p>
             </div>
-            <a
-              v-if="contacto.content.mapLink"
-              :href="contacto.content.mapLink"
-              target="_blank"
-              class="inline-block mt-6 bg-red-600 text-white px-6 py-3 rounded-full hover:bg-red-700 transition"
-            >
+            <a v-if="contacto.content.mapLink" :href="contacto.content.mapLink" target="_blank"
+              class="inline-block mt-6 bg-red-600 text-white px-6 py-3 rounded-full hover:bg-red-700 transition">
               Cómo llegar
             </a>
           </div>
         </div>
 
         <div class="rounded-2xl overflow-hidden shadow-lg">
-          <iframe
-            v-if="contacto.content.mapUrl"
-            :src="contacto.content.mapUrl"
-            width="100%"
-            height="420"
-            style="border: 0"
-            allowfullscreen
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          />
+          <iframe v-if="contacto.content.mapUrl" :src="contacto.content.mapUrl" width="100%" height="420"
+            style="border: 0" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" />
         </div>
       </div>
     </section>
