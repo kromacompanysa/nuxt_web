@@ -23,7 +23,7 @@
           </div>
 
           <div :class="index % 2 === 0 ? 'md:order-1' : ''">
-            <div class="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg bg-gray-100">
+            <div class="aspect-4/3 rounded-2xl overflow-hidden shadow-lg bg-gray-100">
               <img :src="historia.image" :alt="section.heading" class="w-full h-full object-cover">
             </div>
           </div>

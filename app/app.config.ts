@@ -44,6 +44,7 @@ export default defineAppConfig({
           href: "/nosotros/contacto",
           content: {
             title: "Contáctanos",
+            subtitle: "Estamos aquí para atenderte. Contáctanos por cualquiera de estos medios.",
             schedule: "Lun - Sáb: 9:00 AM - 7:00 PM",
             address: "Av. Lambramani #175, Arequipa, Arequipa - Perú",
             clinicName: "Consultorio Kroma",
